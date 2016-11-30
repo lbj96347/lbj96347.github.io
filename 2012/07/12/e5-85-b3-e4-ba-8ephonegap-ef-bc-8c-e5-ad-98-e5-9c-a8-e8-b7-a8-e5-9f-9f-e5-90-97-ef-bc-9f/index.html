@@ -1,0 +1,719 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="相信很多做Phonegap开发的朋友，都会遇到一个问题，那就是跨域。其实这个并不是一个问题，因为Phonegap本身不存在跨域，我也对这个概念模糊了很久。我一直以为Phonegap存在跨域问题，所以用了很多稀奇古怪的看法。其实一直都是错误的。那么这里到底是怎么引起的呢？又需要我们如何解决呢？好吧，我们一步一步来分析。
+首先需求很明确，作为一个Web App就必须要实现局部刷新。那么就需要有Ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Phonegap，存在跨域吗？">
+<meta property="og:url" content="http://lbj96347.github.io/2012/07/12/e5-85-b3-e4-ba-8ephonegap-ef-bc-8c-e5-ad-98-e5-9c-a8-e8-b7-a8-e5-9f-9f-e5-90-97-ef-bc-9f/index.html">
+<meta property="og:site_name" content="Casual & Fellow">
+<meta property="og:description" content="相信很多做Phonegap开发的朋友，都会遇到一个问题，那就是跨域。其实这个并不是一个问题，因为Phonegap本身不存在跨域，我也对这个概念模糊了很久。我一直以为Phonegap存在跨域问题，所以用了很多稀奇古怪的看法。其实一直都是错误的。那么这里到底是怎么引起的呢？又需要我们如何解决呢？好吧，我们一步一步来分析。
+首先需求很明确，作为一个Web App就必须要实现局部刷新。那么就需要有Ajax">
+<meta property="og:updated_time" content="2016-03-31T07:55:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于Phonegap，存在跨域吗？">
+<meta name="twitter:description" content="相信很多做Phonegap开发的朋友，都会遇到一个问题，那就是跨域。其实这个并不是一个问题，因为Phonegap本身不存在跨域，我也对这个概念模糊了很久。我一直以为Phonegap存在跨域问题，所以用了很多稀奇古怪的看法。其实一直都是错误的。那么这里到底是怎么引起的呢？又需要我们如何解决呢？好吧，我们一步一步来分析。
+首先需求很明确，作为一个Web App就必须要实现局部刷新。那么就需要有Ajax">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 关于Phonegap，存在跨域吗？ | Casual & Fellow </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Casual & Fellow</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Cash is King</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于Phonegap，存在跨域吗？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2012-07-12T00:02:31+08:00" content="2012-07-12">
+              2012-07-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>相信很多做Phonegap开发的朋友，都会遇到一个问题，那就是跨域。其实这个并不是一个问题，因为Phonegap本身不存在跨域，我也对这个概念模糊了很久。我一直以为Phonegap存在跨域问题，所以用了很多稀奇古怪的看法。其实一直都是错误的。那么这里到底是怎么引起的呢？又需要我们如何解决呢？好吧，我们一步一步来分析。</p>
+<p>首先需求很明确，作为一个Web App就必须要实现局部刷新。那么就需要有Ajax来实现这个功能了。一般来说，地球人都会写简单的Ajax嘛，尤其是调用了jQuery后，就更加简单了。代码如下：</p>
+<p><pre>$.ajax({<br>    url : “xxx.com”,<br>    type : “POST”,<br>    dataType: “json”,<br>    data : REQUEST,<br>    success : function (){<br>        console.log(“success”):<br>    }<br>});</pre><br>好了，问题就来了。请求后发现浏览器报错，一看console，就发现原来是跨域问题引起的。好吧，跨域问题嘛，我用jsonp，或者是getScript的办法来解决不就好了。但是如果这里面涉及到一些敏感数据的传输，这就危险了，因为我们都知到jsonp或者getScript的f办法都是用GET的办法来传输数据的。那么我硬是用POST的办法来传，怎么办呢？</p>
+<p>于是我们就开始查询Phonegap的文档了。找啊找，终于看到Phonegap wiki里面说： “The cross-domain security policy does not affect PhoneGap applications. Since the html files are called by webkit with the file:// protocol, the security policy does not apply.”</p>
+<p>对啊！Phonegap本身就没有什么安全问题的限制，是允许跨域请求的啊。这里面到底是出了什么问题呢？于是一连串的调试就开始了。查了好多的文档，问了好多的人。到最后经过Jeff兄的帮忙，看到JQUERY MOBILE的一篇文章，提及到jQuery默认对跨域请求有一定的限制。于是就找到了代码：$.support.cors = true;</p>
+<p>设定后，跑动Javascript代码，完事！原来这一切都是因为jQuery引起的。这个小问题困扰了我好几天。有时候再多的聪明也不能够弥补经验上面的缺失啊。所以平时还是要多多练手啊。由于这次的请求我是需要修改header的，所以也把header修改的demo代码在这里和大家分享一下吧。没有经验的朋友赶紧练手哦。</p>
+<p><pre>function makeRequest() {<br>  $.support.cors = true;<br>  var settings = {<br>    type: “POST”,<br>    url: URL,<br>    data: REQUEST,<br>    dataType: “json” ,<br>    error: function(XHR,textStatus,errorThrown) {<br>        alert(XHR);<br>        alert(“textStatus: “ + textStatus);<br>        alert(“errorThrown: “ + errorThrown);<br>        //alert (“XHR=”+XHR+”\ntextStatus=”+textStatus+”\nerrorThrown=” + errorThrown);<br>  },<br>  success: function(data) {<br>    //alert(“ok啦”);<br>    //$(“body”).append(data);<br>    alert(JSON.stringify(data));<br>    alert(data.status);<br>    alert(data.message);<br>  },<br>  headers: {<br>    “Access-Control-Allow-Origin” : “xxx.com”,<br>    “Access-Control-Allow-Headers” : “X-Requested-With”,<br>    “X-CASH” : “xxx”,<br>    “X-Lee” : “xxx”,<br>    “X-HELLO” : “xxx”,<br>    “X-WORLD” : “xxx”,<br>  }<br>  };<br>  $.ajax(settings);<br>}<br>//执行请求<br>makeRequest();</pre><br>这个问题我此前一直有误解。所以在此向看过我PPT分享的朋友说声对不起。大家日后在使用JS库的时候，要看看一些库的默认属性，看看会不会影响到API的调用。不然这会盲目地浪费好多时间在无谓的事情上面。希望大家引以为鉴，我也会好好复习jQuery的。而且Phonegap是一个很强大的框架，可惜的是国内的开发者难以集中起来，出了问题不太好解决，我一般都是上stackoverflow上面咨询的。希望国内的开发者能够踊跃地聚集起来，让这个好的开发工具发扬光大吧。</p>
+<p>刚刚提及到安全问题，借此我也说说Phonegap在面对这个问题的时候可能会出现的情况。刚刚解决了跨域问题（实质上并没有跨域，也就是说这样传输数据是安全的），但是不代表没有了安全问题。因为这些应用的逻辑是在JS中实现的，那么核心的代码也会在JS中。这有什么问题呢？问题就在这里了，一般ipa（以ios应用为例），如果被不法分子下载后，反编译去获取ipa文件的代码，可能就可以将js文件重新解析出来。这时候，安全的key等东西就可能会被获取。这个时候一般有几个解决办法：</p>
+<p>1,混合到obj-c的代码中（虽然听起来有点高级，不过是可以实现的，这里补充一句，学习obj-c对phonegap开发有莫大的好处）；</p>
+<p>2,利用一些压缩的技术，混合到一些png文件中，这就好像此前有人压缩js代码一样，混合进取；</p>
+<p>3,自己实现一套比较好的加密机制；</p>
+<p>4,对代码进行加密，混淆，尽最大限度地不让竞争对手或者是不法分子难以破解。</p>
+<p>好的，大概经验就分享到这里了。我遇到问题的时候还会在线上进行提问的。希望大家能够多多交流！:-)</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/06/19/e5-86-8d-e6-ac-a1-e6-9b-b2-e7-ba-bf-e6-95-91-e5-9b-bd-e8-b0-83-e7-94-a8sae-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6/" rel="next" title="再次曲线救国-调用SAE临时文件">
+                <i class="fa fa-chevron-left"></i> 再次曲线救国-调用SAE临时文件
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2012/07/26/utf-8-e7-89-b9-e6-ae-8a-e7-ac-a6-e5-8f-b7-e9-9b-86-e6-b1-87-e6-80-bb/" rel="prev" title="UTF-8特殊符号集汇总">
+                UTF-8特殊符号集汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Cash" />
+          <p class="site-author-name" itemprop="name">Cash</p>
+          <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/cashlee96347" target="_blank">
+                  
+                    <i class="fa fa-instagram"></i> Instagram
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cash</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

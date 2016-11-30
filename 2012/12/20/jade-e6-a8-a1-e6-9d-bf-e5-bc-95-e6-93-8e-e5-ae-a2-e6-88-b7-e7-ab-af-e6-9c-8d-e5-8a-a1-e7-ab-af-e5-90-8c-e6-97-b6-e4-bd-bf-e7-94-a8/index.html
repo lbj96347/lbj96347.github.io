@@ -1,0 +1,834 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="在Stackoverflow上面看到一个问题Client side + Server side templating, feels wrong to me, how to optimize?对于客户端，服务端同时使用Jade模板引擎怎么优化呢？其实问题作者的原意是如何同时使用，而且能够让代码保持分离，同时易于维护。基于我对模板引擎的理解，以及以往的使用经验，其实这个问题并不难，于是我回答了一下，简">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jade模板引擎客户端服务端同时使用">
+<meta property="og:url" content="http://lbj96347.github.io/2012/12/20/jade-e6-a8-a1-e6-9d-bf-e5-bc-95-e6-93-8e-e5-ae-a2-e6-88-b7-e7-ab-af-e6-9c-8d-e5-8a-a1-e7-ab-af-e5-90-8c-e6-97-b6-e4-bd-bf-e7-94-a8/index.html">
+<meta property="og:site_name" content="Casual & Fellow">
+<meta property="og:description" content="在Stackoverflow上面看到一个问题Client side + Server side templating, feels wrong to me, how to optimize?对于客户端，服务端同时使用Jade模板引擎怎么优化呢？其实问题作者的原意是如何同时使用，而且能够让代码保持分离，同时易于维护。基于我对模板引擎的理解，以及以往的使用经验，其实这个问题并不难，于是我回答了一下，简">
+<meta property="og:updated_time" content="2016-03-31T07:55:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jade模板引擎客户端服务端同时使用">
+<meta name="twitter:description" content="在Stackoverflow上面看到一个问题Client side + Server side templating, feels wrong to me, how to optimize?对于客户端，服务端同时使用Jade模板引擎怎么优化呢？其实问题作者的原意是如何同时使用，而且能够让代码保持分离，同时易于维护。基于我对模板引擎的理解，以及以往的使用经验，其实这个问题并不难，于是我回答了一下，简">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Jade模板引擎客户端服务端同时使用 | Casual & Fellow </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Casual & Fellow</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Cash is King</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Jade模板引擎客户端服务端同时使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2012-12-20T00:09:21+08:00" content="2012-12-20">
+              2012-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在Stackoverflow上面看到一个问题<br><a href="http://stackoverflow.com/questions/10188618/client-side-server-side-templating-feels-wrong-to-me-how-to-optimize/13947257" target="_blank" rel="external">Client side + Server side templating, feels wrong to me, how to optimize?</a><br>对于客户端，服务端同时使用Jade模板引擎怎么优化呢？其实问题作者的原意是如何同时使用，而且能够让代码保持分离，同时易于维护。基于我对模板引擎的理解，以及以往的使用经验，其实这个问题并不难，于是我回答了一下，简单地做了一个英文的教程。搜索以下国内的文章，似乎没有一些简单的教程，可能会对好像我这样的菜鸟造成学习上的困扰，于是就把答案转译成中文。分享以下，也欢迎大家同时提供更好的编码经验，分享一下。</p>
+<p>毫无疑问，Jade是一个非常不错的模板引擎，尽管它也有一些Bug，不过你提issue，应该很快就会被解决掉的。而且它的语法基于HAML，甚至更优，提高效率的东西因此值得我们去尝试使用。</p>
+<p>在阅读本文之前，我假定你已经使用过其他的模板引擎，或者已经会使用Server端的模板引擎。如果不懂的话，要折腾一下，应该很容易理解的。那么在把Server端和Client端的Jade结合前，我们先尝试把单纯客户端的Jade模板渲染，做一遍。</p>
+<p>首先我们要下载Jade到本地</p>
+<pre>
+git clone https://github.com/visionmedia/jade.git
+</pre>
+
+<p>接着我们需要<br>$ make jade.js<br>事实上，jade的项目下，已经有这两个文件了：jade.js 或者 jade.min.js。这个时候，我们只是需要把这两个文件放到我们喜欢的路径上，然后让浏览器加载他。</p>
+<p>第三步，看看我的demo，我加载了jade以及jquery，而且你还看到我加载了一段jade模板代码进来。其中item是一个变量，我们就利用jade模板引擎的api使用方式，逐步地把这个模板渲染出啦。</p>
+<pre>
+代码中已经把基本的html元素去掉了，因此自行加上 :
+&lt;script type='text/javascript' language='javascript' src="lib/jquery-1.8.2.min.js"&gt;&lt;/script&gt;
+&lt;script type='text/javascript' language='javascript' src="lib/jade/jade.js"&gt;&lt;/script&gt;
+&lt;script type='template' id='test'&gt;
+ul
+  li hello world 
+  li #{item}
+  li #{item}
+  li #{item}
+  //这个是jade的模板引擎代码 我们将会渲染三个item变量出来，值都是 "this is an item"
+&lt;/script&gt;
+&lt;script&gt;
+  var compileText = $("#test").text();//获取我们要编译的模板文本，数据类型是string，注意缩进
+  console.log( typeof( compileText ) );
+  var fn = jade.compile( compileText , { layout : false } );//利用jade编译模板文本
+  var out = fn( { item : "this is an item " } );//编译好之后，我们执行该函数，把我们要传的变量，渲染的数据传入
+  console.log( out );//最后输出最终编译的结果
+  $("body").append( out );//利用javascript渲染到前端页面上
+&lt;/script&gt;
+</pre>
+
+<p>最终看到的结果是</p>
+<pre>
+hello world
+this is item
+this is item
+this is item
+</pre>
+
+<p>就是上面简单的几个步骤就可以把我们需要渲染的东西渲染出来了。很简单吧。那么疑问就来了，要是我们服务端要使用jade，客户端也是使用jade，岂不是有语法冲突？（试想一下，服务端使用jade，在服务端就把模板渲染好了，客户端上面拿到的是已经编译好的代码）</p>
+<p>这个时候我们就必须要解决冲突的问题。还好。jade早就提供了这套解决方案了。这里要记住，服务端有服务端的渲染，客户端有客户端的渲染。下面来看看例子：<br>index.jade</p>
+<pre>
+!!!5
+html
+  head
+   title hello world
+  body
+    ul#list
+
+    script#list-template(type='template')
+      |- for( var i in data )
+      |    li(class='list') \#{ data[i].name }
+      |- }
+</pre>
+
+<p>很明显，上面是服务端需要渲染的jade文件，代码应该很容易看懂了。和上面的例子一样，我们在上面要渲染的模板是id 为 list-template里面的内容。不过写法似乎有点不一样 :-)。首先缩进相同的情况下，在代码的左边都加上了 “|” 。</p>
+<p>加上”|”的原因是，为了避免和server端的jade模板代码造成混淆，不然可能会报错，或者无法正常去到客户端渲染。</p>
+<p>其次，你会看到在#{ data[i].name }的前面，加上了”\”符号，实质上同样是为了转义，不被污染。</p>
+<p>下面再看javascript的代码</p>
+<p>index.js</p>
+<pre>
+/* you javascript code */
+var compileText = $('#list-template').text();
+var compile = jade.compile( compileText , { layout : false } );
+
+var data = [{ "name" : "Ben" } , {"name" : "Jack" } , {"name" : "Rose" }];
+var outputText = compile( data );
+
+$("#list").append( outputText );
+</pre>
+
+<p>这下很容易理解了吧。最后输出的结果就是</p>
+<pre>
+Ben
+Jack
+Rose
+</pre>
+
+<p>小提示：其实在调试的时候有jade语法错误提示，但是依然挺麻烦的。如果确实遇到jade模板服务端，客户端混淆的时候，不妨尝试一下先在纯html页面中，载入jade，写一些测试代码，然后让jade进行渲染。保证到需要编译的文本，是字符串，而且语法符合编译的要求。这样就没有问题了。</p>
+<p><a style="color:red">更新部分：</a><br>上面的内容基本上围绕服务端，以及客户端同时使用Jade的情况。那么如果单纯在客户端使用Jade呢？其实也是可以的。不过写法有点不一样。这里再从更新部分给大家展示一下。</p>
+<pre>
+&lt;script id='list-template' type='template'&gt;
+- var type = ['爱情','生活'];//此后还要加入颜色分类
+- for( var i in data ){
+   li.question-list-button( data-id='#{ data[i].id }' )
+     .icon 
+       img( src='#{ data[i].icon }' )
+     .message
+      h3.no-return #{ data[i].title } 
+      p( class='message-panel no-return' ) #{ ( 235 - data[i].id ) + '天，' +data[i].use_times+'人测过' } 
+      p( class='type-panel no-return' ) 
+        span #{ type[data[i].type] } 
+- }
+&lt;/script&gt;
+</pre>
+
+<p>大家可以看到，script标签内就是Jade模板的代码了。对于这里的缩进是有要求的。不然你的编译会出错。提示缩进不正确。正确的缩进如上面展示的代码所述。在script里面，逻辑代码全部靠左，不留可白的地方。对于变量，逻辑，循环等的特殊语句需要在前面加上横杠，这个就好像上面Jade Server Side &amp; Client Side的Example一样了。注意的地方就是靠左以及不留空。估计我现在这样表述或许会有点不清，不过在实际写代码时，你注意一下就可以了。:-)</p>
+<p><a style="color:red">20130720更新部分：</a><br>今天遇到另外一个场景，就是在pyjade下，服务端以及客户端同时使用jade。此前采用的方式是直接在HTML文件里面添加一个script标签，然后写入脚本。但是使用pyjade的时候发现同样的语法会报错，暂时没有办法解决（因为这里可能是pyjade本身存在问题，也可能是我的代码没有针对pyjade写对。这里还有待研究。后来想想，我在这里边要写的jade模板其实还是不少的，全部塞进HTML文件里面似乎也不太适合。这里不如就采用一种方法，让模板文件分开管理，然后采用异步加载的方式将这些文件引入进来。</p>
+<p>（下面是一个示例）于是我就省下了写script标签的功夫，直接把这些模板写入list-template.txt文件中。文件中的内容如下：</p>
+<p><pre></pre></p>
+<ul>
+<li>for( var i in listdata ){<br>  li #{ listdata[i].name } </li>
+<li>}<br><br>然后在javascript中则是这样引入的：<br><pre><br>&lt;script id=’list-template’ type=’text/javascript’&gt;</pre></li>
+</ul>
+<p>var request_template_dir = ‘…’;<br>var listdata = [{ “name” : “Ben” } , {“name” : “Jack” } , {“name” : “Rose” }];//需要全局变量才可以使用template渲染</p>
+<p>$(function (){</p>
+<p>  $.get( request_template_dir +  “list-template.txt”,function ( template_string ){<br>    console.log( template_string );<br>    var compileText = template_string;<br>    console.log( typeof( compileText ) );<br>    var compile = jade.compile( compileText , { layout : false } );<br>    var outputText = compile( listdata );<br>    console.log( outputText );<br>    $(“#option_list”).append( outputText );<br>  });</p>
+<p>});</p>
+<p>&lt;/script&gt;<br><br>这样就顺利地把模板渲染出来了。这里有一点是非常值得注意的，就是你会看到我的渲染数据使用的是一个<a style="color:red">全局变量</a>。这点非常重要，假设这个listdata写在闭包里面的话，渲染的时候会出现 listdata is not define的错误。这里的话大家稍微想多一层就会明白为什么会这样。结合以前的例子，渲染的时候，我们的模板是直接写在HTML中的，如果使用模板引擎进行渲染的时候，会直接把渲染的数据暴露在全局变量中，让操作得以正常运行，这里只是在写脚本的时候，定义好这是全局变量。因此避免出现未定义变量的情况。</p>
+<p>其实本文并没有什么技术含量，仅仅是一个小教程以及解决一些小疑惑。jade的强大还远远不止这些呢。不过上面已经含括了挺多的功能啦，具体的语法还需要你亲自去探索。</p>
+<p>其实最近我的个人网站也在偷偷地上线啦，<a href="http://www.cashlee.me/" target="_blank" rel="external">www.cashlee.me</a> 上面会属于我的开源项目，以及一些想法的实验。同时我也会对一些服务封装一些api出来，提供给大家使用。希望大家喜欢。当然我也会长期维护，放更多有趣的东西上去提供给大家玩，或者自己玩。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2012/12/19/jade-e6-a8-a1-e6-9d-bf-e5-bc-95-e6-93-8e-vim-e8-af-ad-e6-b3-95-e9-ab-98-e4-ba-ae-e9-85-8d-e7-bd-ae/" rel="next" title="Jade模板引擎 VIM语法高亮配置">
+                <i class="fa fa-chevron-left"></i> Jade模板引擎 VIM语法高亮配置
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/02/10/2012-e5-b9-b4-e7-bb-88-e6-80-bb-e7-bb-93/" rel="prev" title="2012年终总结">
+                2012年终总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Cash" />
+          <p class="site-author-name" itemprop="name">Cash</p>
+          <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/cashlee96347" target="_blank">
+                  
+                    <i class="fa fa-instagram"></i> Instagram
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cash</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

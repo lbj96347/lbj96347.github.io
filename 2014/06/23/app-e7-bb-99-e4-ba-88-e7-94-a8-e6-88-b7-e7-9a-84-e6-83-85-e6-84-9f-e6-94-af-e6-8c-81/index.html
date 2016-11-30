@@ -1,0 +1,756 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="这几年也算做了好多的App，每次想要做App之前，我们都会去思考，用户的需求是什么，然后我们做些什么。OK，我们已经可以开工去做一个App出来。其实要搭建一个Demo真的非常便捷，加上现在的开发工具，大家的编程能力，已经比前些年要好了，业界的平均水平也在提高，找个资料是很方便的事情。在这个时候，往往我们会发现打磨一款App，是最花时间，最消耗成本的。做过日下载量很高的App，也做过很实用，但是却无">
+<meta property="og:type" content="article">
+<meta property="og:title" content="App给予用户的情感支持">
+<meta property="og:url" content="http://lbj96347.github.io/2014/06/23/app-e7-bb-99-e4-ba-88-e7-94-a8-e6-88-b7-e7-9a-84-e6-83-85-e6-84-9f-e6-94-af-e6-8c-81/index.html">
+<meta property="og:site_name" content="Casual & Fellow">
+<meta property="og:description" content="这几年也算做了好多的App，每次想要做App之前，我们都会去思考，用户的需求是什么，然后我们做些什么。OK，我们已经可以开工去做一个App出来。其实要搭建一个Demo真的非常便捷，加上现在的开发工具，大家的编程能力，已经比前些年要好了，业界的平均水平也在提高，找个资料是很方便的事情。在这个时候，往往我们会发现打磨一款App，是最花时间，最消耗成本的。做过日下载量很高的App，也做过很实用，但是却无">
+<meta property="og:updated_time" content="2016-03-31T07:55:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="App给予用户的情感支持">
+<meta name="twitter:description" content="这几年也算做了好多的App，每次想要做App之前，我们都会去思考，用户的需求是什么，然后我们做些什么。OK，我们已经可以开工去做一个App出来。其实要搭建一个Demo真的非常便捷，加上现在的开发工具，大家的编程能力，已经比前些年要好了，业界的平均水平也在提高，找个资料是很方便的事情。在这个时候，往往我们会发现打磨一款App，是最花时间，最消耗成本的。做过日下载量很高的App，也做过很实用，但是却无">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> App给予用户的情感支持 | Casual & Fellow </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Casual & Fellow</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Cash is King</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                App给予用户的情感支持
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2014-06-23T00:18:55+08:00" content="2014-06-23">
+              2014-06-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/未分类/" itemprop="url" rel="index">
+                    <span itemprop="name">未分类</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这几年也算做了好多的App，每次想要做App之前，我们都会去思考，用户的需求是什么，然后我们做些什么。OK，我们已经可以开工去做一个App出来。其实要搭建一个Demo真的非常便捷，加上现在的开发工具，大家的编程能力，已经比前些年要好了，业界的平均水平也在提高，找个资料是很方便的事情。在这个时候，往往我们会发现打磨一款App，是最花时间，最消耗成本的。做过日下载量很高的App，也做过很实用，但是却无人问津的App，下面我想大致地从用户情感支持上，展开一下讨论。</p>
+<p>为什么是讨论情感支持，而不是讨论需求，不是讨论人性本质。我想，大部分的App开发者在做一个App之前都会去思考，你要给用户带来些什么，如果确实没有想过这个问题，那就真的要好好想想了。而且我想讨论这方面内容的文章已经很多了。说到情感支持，我主要是从最近做用家App以及参考了相关的一些心理学的资料，以及昨天晚上看了WWDC 2014 Designing Intuitive User Experiences这个Session后的一些感想。因为一个应用被构建出来，要有好的人机交互模式，更多流露在一些情感支持的细节上。不敢说自己的App现在做得非常非常好，但是至少看到有这样的一个趋势，而且也看了其他一些优秀的App，在这些细节上做得非常不错。</p>
+<p><strong>什么是情感支持</strong></p>
+<p>首先说说什么是情感支持。举个很简单的例子，当顾客走近一家餐厅，而今天刚好是情人节，那么餐厅要给予的就是情人节祝福，装饰上会以红色点缀和玫瑰等物品作为衬托，此外当然提供蜡烛+情人节套餐啦。这样的话能够快速地让顾客融入到餐厅的气氛当中，既然餐厅已经给你营造了一个这么好的氛围，而且击中了你的心，你剩下能做的当然是乖乖给钱就餐咯。这个就是很简单的情感支持的场景。让用户拥有了什么：自我尊重，安全感，享乐，自我满足，归属感。针对这种能够满足用户情感诉求的方式而提供全方位的支持，我称之为情感支持。</p>
+<p>还是刚才的例子<br>自我尊重：因为自己是属于情人节的享乐人群，所以首先会尊重自己，而选择一个有情人节主题的餐厅。<br>安全感：红色的装饰，蜡烛等氛围，都会营造温馨，浪漫的气氛。情人节套餐能够减少选择上的困难，减少陌生感。都能够为顾客提供安全感支持。<br>享乐：都和自己喜欢的人融合到一个场景里消费了，还不开心嚒。<br>自我满足：吃一顿浪漫好吃的套餐，已经是很好的方法去证明自己是个高富帅了。（有点扯，但是情人节套餐的价格贵，还是有道理的）<br>归属感：似乎看不出来，但是实际上，在情人节的这个时间段，做情人节的装饰以及套餐，就已经将所有的情人圈入到这个范围上了。因为这个地方属于情侣，单身的人可能就不会考虑进入这家店了。</p>
+<p><strong>用户想要获得什么情感支持</strong></p>
+<p>人进入到一个新的场景中，首先就要获得的就是存在感。就好比婴儿出生，要证明已经来到了这个世界上就得哭一下，从法律层面上，小脚丫会被印在出生证明上，证明这个人来了。而除了存在感，人还需要获得什么呢？人还需要获得：</p>
+<p>自我尊重（对自我的认知，有自信）<br>安全感（减少对未知的恐惧感）<br>享乐（解决自身需求）<br>与他人融洽相处（通过和他人交流证明社会价值）<br>自我满足（实现自我价值）<br>受到尊重（存在感的再一次证明）<br>归属感（认可所进入的场景，所进入的场景适合自己）<br>刺激感（新鲜感的体现，刺激不断学习新的东西）</p>
+<p><strong>界面如何提供情感支持</strong></p>
+<p>界面能够直接提供用户情感支持的元素有：配色，布局等。</p>
+<p>配色</p>
+<p>大众软件：大众软件一般采用三原色，或者黑白色作为界面的基本配色。比如Apple和微软的软件，大部分都采用蓝色，白色作为基本的界面配色。因为一般来说，三原色的配置或者是黑白色的配置是最基本的，这样不会被大部分人所排斥。当用户使用的时候，一般都会自我角色代入，去思考自己是否能够handle这个软件，这个软件是否适合自己。比如说，通过配色的方案调出了粉红色，而Apple采用了粉红色作为主配色，我相信会赶走相当一部分的男士。而如果单纯地采用黑色，一定会有很大部分女士会认为这电脑太呆板了。App上，比如微信，QQ，也会采用这些比较基本的配色，而不去选择其他的颜色，就是为了减少用户的排斥度。</p>
+<p>有针对性的软件或者App：比如最近比较火的Snapchat，Line，Vine，Yo，Nice等，不一定会使用原色作为主配色。而是针对他们的特定人群做了配色上的选择。一般以绿色，黄色为主。都十分阳光。这样的话，更容易让用户感知到自己处于一个年轻，活泼的氛围当中，年轻的用户就会觉得，YES，我需要它。比如Yo，icon设计就简单得不得了，就是紫色的一坨。但是进入App后，大部分是绿色，黄色，蓝色这些年轻的颜色，年轻的朋友就会产生归属感了。如果你去看，美丽说，蘑菇街，唯品会等网站，大部分这些网站都会采用桃红色，直接就把用户带入场景当中了，而这些桃红色直接让用户感知到享乐，自我满足，受到尊重，产生归属感（至少这个地方应该男人少了）。</p>
+<p>布局</p>
+<p>玩着玩着，你会发现好多App，似乎都差不多，都差不多，但是又有点不一样。但反正整体布局差不多，虽然有些时候有些App偶尔会有一个创新的交互，但是这些创新的交互似乎并没有走得特别长远，又或者说这些App没有成为大众。为什么会这样，因为这些App都在照顾你的安全感，归属感。当然不能排除有一些交互设计确实本身就存在问题。如果更新了Path4.0的朋友就会发现，Path已经把Message的功能砍掉了，而且也把侧滑栏的交互砍掉了，换成了跟Facebook一样，最传统的tabBar样式。虽然说侧滑栏的交互在前两年似乎很多人使用，而且也受到一段时间的追捧。但是侧滑栏却导致了另外一个问题，导航容易出现逻辑上的混乱，而且会让原本有限的选项卡变成了无限多的选项卡。而且会一定程度上影响了使用的效率。这样的话就会把用户的三个情感支持忽略了：安全感，享乐，受到尊重。为什么是安全感？因为人类的恐惧来源于对未知的事物产生恐惧。而无限增多的选项卡，直接让未知的东西变多。而同时这些东西逐渐地影响效率，这样的话就会让用户无法享乐，难以得到尊重。</p>
+<p>很多人说研究App，但是真正好玩的，交互成功的App不应该需要用户花很大的精力去研究。而应该花更多的时间去享乐，去利用这个App创造更多有价值的东西。</p>
+<p><strong>交互如何提供情感支持</strong></p>
+<p>动画</p>
+<p>一个好的交互动画能够给予用户一个很好的情感支持。对比两个App的下拉刷新。也许会更好理解这些情感上的差异了。</p>
+<p>微博：刷新前会提示多少条未读，下拉刷新的时候，会出现一段文案提示，告诉你现在正在刷新，左边会跑一个风火轮旋转。刷新完毕后，告知刷新完毕，如果没有刷新成功，就报告错误的情况。</p>
+<p>微信：刷新朋友圈的时候不会提示多少未读，只会告诉你有谁更新了，会出现彩虹的圈旋转，刷新完毕就往上弹。</p>
+<p>我并不认为新浪微博的交互是成功的，而且还会时不时地将广告塞进下拉刷新的停留区域。试着想想一下这里出现的情况，用户看到多少条未读，会发现自己有好多的任务没有完成，强迫症或者没有强迫症的人看到过多的数字都可能会感到害怕。此外，刷新后其实网络错误的情况应该隐藏起来。用户真正关心的是有没有看到新的内容，而这些网络的问题更多的应该是开发者通过更聪明的方法去解决，去隐藏起来。无时无刻给用户呈现最新的内容，不要让用户感觉到是用户的错。因为这样的话用户就无法获得尊重，难以找到归属感或者自我满足。想象一个场景，在刷微博的时候，突然告诉我网络错误，超时等的字眼，我就会怀疑，我的网络出了什么问题，要怎么解决。而如果同样是刷朋友圈，如果我确实网络错误，刷不了内容，我只会觉得暂时还没有更新。至于说什么时候告知用户，网络有问题，那是其他地方要解决的事情了。</p>
+<p><strong>文案如何提供情感支持</strong></p>
+<p>按钮文案，输入框提示文案，介绍文案等在这边都统称为文案。不同的文案以及不同的按钮排布会造成不同的效果。文案其实是最直观，最直接的情感支持方式之一。因为你想买萌，想造就某种特色出来，文字是最方便的。比如，我现在说：亲。你一定马上想到了淘宝。（当然，这个和文案无关）我只是想证明，文字的魅力有多大而已。其实文案无非两种作用：1，诱导你的用户去操作你期望触发的行为；2，降低用户心里的压力。</p>
+<p>打个比方，在用户反馈的地方，很多App都会直接写用户反馈。但是用家App是直接写：我要吐槽。其实这样的话就大大降低了用户的心理压力预期。因为反馈，需要整理思绪。但是吐槽，可以随便带一句话，而且是最真实的，最浮躁的感受。我们为用户提供更好的体验，无非就是为了这个吗？此外还有很多地方值得商榷。再分享一个用家App的例子。在用家App1.0版本上来的时候，我们期望是用户能够在App里面分享身边好物。可是，用户并不会感知到，虽然什么都发。乱七八糟。后来我们在两个地方加入这个文案，一个是应用的启动页，一个是相机的拍照页面，经常性地在用户眼前呈现这个不明显，但是又好记的话。潜移默化地影响用户行为。慢慢地，用户就被引导到正轨上面了。<br>还有其他一些细节的，有趣的点暂时不说太多了。也许以后有机会的时候，再做一个更深入的分析。</p>
+<p><strong>社区氛围情感支持</strong></p>
+<p>这里的话我单纯抽出几个大家知道的社区来说，v2ex，知乎，same。除了中间那个，另外两个算是小众社区，大家不一定会玩过。不过没有关系，我大概介绍一下v2ex是一个技术，设计交流的社区，上面聚集了好多优秀的开发者，设计师。知乎，前两年还很小，但是现在应该是一个流量巨大的网站了，加上又有知乎手机客户端，日报等app。same也做了好几年，但是最近开始热闹起来，是一个小众的反社交社区，上面以话题为主，大家以创造话题内容为娱乐。</p>
+<p>社区是需要给予用户情感支持的，每一个社区都会有自己的态度，都会有自己的世界观。而社区相对于社交来说有这样的一个层级关系。我是这样理解的：社交&gt;社区&gt;社群。社群实际是一个最最垂直的领域的一个社交关系，而里面的人可能都不认识，但是大家却是具有强烈的共同意志的。社区的话，也可能不认识，但可能认识，大家的共同意志会再上升一个层级，但是相对模糊了。社交的话，中心点已经不在这种集体意志上面了，决定一切的是人，一个个独立的人。而在社交圈子里面，需要以六度人脉去构建各种关系。这个是社交，社区，社群之间的不同。</p>
+<p>社区（社群）强调集体意志，社交强调个人意志。社区产品：v2ex，知乎，same。社交产品：微信，新浪微博，facebook。</p>
+<p>好了，说了一堆的东西。希望没有搞混概念。刚刚说到社区的话，具有自己的态度以及世界观。这个怎么体现呢。我说说吧，在v2ex上面的态度就是，设计师和程序员是地位最高的，技术更大程度上是没有好坏之分的，而是有会用和不会用的人（当然偶尔会黑一下某些技术）。这样社区的氛围就会相对和谐稳定，也保证了设计师和程序员在这里更畅快地沟通，而且相信大部分都是互联网从业人员，大家的归属感，认同感，以及自我尊重的意识就来了。这样的话也能够在一定程度上保证了沟通的高质量。</p>
+<p>对于知乎的话，本身这个产品就赋予了用户使命，将自己知道的东西分享给别人，给别人帮助，而且定位比百度知道这些水水的地方高很多，至少来说现在跟你说起知乎的回答，你可能会马上想到，一个简单的问题也可以回复一大串文字。这里就已经一定程度上给用户一个很大的价值体现和正反馈了。</p>
+<p>还有就是same，same是我看过这么多社区里面最渴望为用户营造情感支持的社区了。在上面说什么都可以，对于用户来说可匿名，可隐身等，其实都是对用户的尊重。而且用户在里面构建的关系非常临时，非常弱，这样就保证了大家参与话题时强调的集体意志了。虽然说有时候会有点不负责任，但是这样给到用户的正反馈其实还是很强的。当然same也有一定的局限性，这个就不展开讨论了。至少来说，一个地方能够让人感觉到有安全感，这个地方就会有人愿意持续地待下去。就好像你玩游戏，游戏的角色是不会死的，这样就给了你很大的安全感，你可以追求刺激，也有安全感，所以就被这些游戏带入到无底洞了。</p>
+<p><strong>总结</strong></p>
+<p>我们给用户提供情感支持，其实就是希望应用能够给予用户正反馈，能够让用户在这里受到尊重，得到满足，要让用户感觉到他永远是对的，永远是最棒的。只要往着这个方向去想，应用就可以慢慢地打磨，变得更让人喜欢了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2014/05/24/e8-af-bb-e3-80-8c-e5-9c-a8-e5-88-9b-e4-b8-9a-e5-85-ac-e5-8f-b8-e7-9a-84-e4-bd-93-e4-bc-9a-e3-80-8d-e6-9c-89-e6-84-9f/" rel="next" title="读「在创业公司的体会」有感">
+                <i class="fa fa-chevron-left"></i> 读「在创业公司的体会」有感
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/23/Debris-on-my-mind-this-week-2016-05-20/" rel="prev" title="Debris on my mind this week - 2016-05-20">
+                Debris on my mind this week - 2016-05-20 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Cash" />
+          <p class="site-author-name" itemprop="name">Cash</p>
+          <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/cashlee96347" target="_blank">
+                  
+                    <i class="fa fa-instagram"></i> Instagram
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cash</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

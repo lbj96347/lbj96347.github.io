@@ -1,0 +1,751 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="此前已经写过两篇关于Jade Template的文章了。AngularJs也在最近的实践当中，当然也少不了希望在AngularJS上面尝试Jade Template。为什么这么说呢，在Angular、 Backbone、 CanJS和 Ember还有其他的一些框架里面，从复杂度，上手速度，以及代码维护量来说，比较可控的是AngularJS是比较优秀的。尤其是使用过Backbone的同学就会知道，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJs与Jade Template混合使用（初探）">
+<meta property="og:url" content="http://lbj96347.github.io/2013/05/09/angularjs-e4-b8-8ejade-template-e6-b7-b7-e5-90-88-e4-bd-bf-e7-94-a8-ef-bc-88-e5-88-9d-e6-8e-a2-ef-bc-89/index.html">
+<meta property="og:site_name" content="Casual & Fellow">
+<meta property="og:description" content="此前已经写过两篇关于Jade Template的文章了。AngularJs也在最近的实践当中，当然也少不了希望在AngularJS上面尝试Jade Template。为什么这么说呢，在Angular、 Backbone、 CanJS和 Ember还有其他的一些框架里面，从复杂度，上手速度，以及代码维护量来说，比较可控的是AngularJS是比较优秀的。尤其是使用过Backbone的同学就会知道，">
+<meta property="og:image" content="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png">
+<meta property="og:image" content="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/logo.png">
+<meta property="og:updated_time" content="2016-03-31T07:55:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJs与Jade Template混合使用（初探）">
+<meta name="twitter:description" content="此前已经写过两篇关于Jade Template的文章了。AngularJs也在最近的实践当中，当然也少不了希望在AngularJS上面尝试Jade Template。为什么这么说呢，在Angular、 Backbone、 CanJS和 Ember还有其他的一些框架里面，从复杂度，上手速度，以及代码维护量来说，比较可控的是AngularJS是比较优秀的。尤其是使用过Backbone的同学就会知道，">
+<meta name="twitter:image" content="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> AngularJs与Jade Template混合使用（初探） | Casual & Fellow </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Casual & Fellow</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Cash is King</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AngularJs与Jade Template混合使用（初探）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2013-05-09T01:09:33+08:00" content="2013-05-09">
+              2013-05-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png" alt="" title="AngularJS-large"></a><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/logo.png" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/logo.png" alt="" title="logo"></a></p>
+<p>此前已经写过两篇关于Jade Template的文章了。AngularJs也在最近的实践当中，当然也少不了希望在AngularJS上面尝试Jade Template。为什么这么说呢，在Angular、 Backbone、 CanJS和 Ember还有其他的一些框架里面，从复杂度，上手速度，以及代码维护量来说，比较可控的是AngularJS是比较优秀的。尤其是使用过Backbone的同学就会知道，有很多的依赖要安装。</p>
+<p>当然，各个框架都有自己优秀的地方，我们应该多尝试，多吸收这些框架给我们开发带来的好处。好，言归正传。这次说是初探，我也纯粹是希望在这里展示一下简单的Demo，让大家理解好模板的概念。其实此前有在客户端以及服务端同时使用Jade的话，这次使用AngularJs应该来说是一点难度都没有的，相对来说还更简单一点。而且AngularJs还提供了更多强大的功能，例如常用的：双向绑定。</p>
+<p>先上会遇到的代码目录，我是在Express.js，Node.js，Jade下使用AngularJs的。<br>routes.js（路由配置）<br>-application/</p>
+<ul>
+<li><p>angular/<br>app.js（应用程序）</p>
+</li>
+<li><p>resource/</p>
+</li>
+<li>js/<br>angular_demo.js<br>-lib/<br>angular.js（angularJs的库）<br>-views<br>index.jade</li>
+</ul>
+<p>这里是route.js的配置</p>
+<p><pre>/<em> 这里是routes.js的配置 </em>/<br>var angularjs = require(‘./application/angular/app.js’);<br>app.get(‘/angular_demo’, angularjs._RENDER );</pre><br>这里是app.js</p>
+<p><pre>exports._RENDER = function ( req , res ){</pre></p>
+<p>  var phones_object = {<br>    ‘series’ : ‘iPhone’ ,<br>    ‘array’ : [<br>      {<br>        ‘name’ : ‘iphone 3gs’ ,<br>        ‘price’ : ‘1000’<br>      },<br>      {<br>        ‘name’ : ‘iphone 4’ ,<br>        ‘price’ : ‘2000’<br>      },<br>      {<br>        ‘name’ : ‘iphone 4s’ ,<br>        ‘price’ : ‘3000’<br>      }]<br>  };</p>
+<p>  console.log( phones_object );</p>
+<p>  res.render(“angularjs/index”, {<br>    layout : false ,<br>    locals : { phones : phones_object }<br>  });</p>
+<p>}<br>这里是angular_demo.js</p>
+<p><pre>/<em> angular js test </em>/</pre></p>
+<p>‘use strict’;</p>
+<p>/<em> Controllers </em>/</p>
+<p>function PhoneListCtrl($scope) {<br>  $scope.phones = [<br>    {“name”: “Nexus S”,<br>     “snippet”: “Fast just got faster with Nexus S.”},<br>    {“name”: “Motorola XOOM™ with Wi-Fi”,<br>     “snippet”: “The Next, Next Generation tablet.”},<br>    {“name”: “MOTOROLA XOOM™”,<br>     “snippet”: “The Next, Next Generation tablet.”}<br>  ];<br>}<br>这里是index.jade</p>
+<p><pre>!!!5<br>html( ng-app )//定义好这是angular的app<br>  head</pre></p>
+<pre><code>meta(http-equiv=&quot;content-type&quot;, content=&quot;text/html; charset=UTF-8&quot;)
+meta(name=&quot;viewport&quot;, content=&quot;width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0&quot;)
+meta(name=&quot;apple-mobile-web-app-capable&quot;, content=&quot;yes&quot;)
+meta(name=&quot;description&quot;, content=&quot;CashLee Homepage&quot;)
+meta(name=&quot;author&quot;, content=&quot;CashLee&quot;)
+meta(name=&quot;keywords&quot;,content=&quot;李秉骏,CashLee,HTML,CSS,XML,XHTML,JavaScript&quot;)
+
+title CashLee Personal Website - 李秉骏的个人网站 &amp;amp; Lab • 個人のホームページ 
+
+link(rel=&apos;stylesheet&apos;, href=&apos;/css/app.css&apos;)
+
+script( src=&apos;lib/angular.js&apos; )
+script( src=&apos;js/application/angular/index.js&apos; )
+</code></pre><p>  body( ng-controller=”PhoneListCtrl” )//定义好controller<br>    ul.angular-demo<br>      li( ng-repeat=”phone in phones” )//执行angular模板<br>        <br>        p</p>
+<pre><code>ul.cashlee-demo
+  - console.log( &apos;phones 数组 长度 : &apos; ,  phones.array.length );//横杠标示，定义jade模板引擎执行代码
+  - for( var i in phones.array ){
+      li 
+        a #{ phones.array[i].name }
+        p #{ phones.array[i].price }
+  - }&lt;/pre&gt;
+</code></pre><p>到这里你就已经体验完AngularJs和Jade模板引擎结合后的快感了！其实同时使用并无冲突，而且语法上非常好理解。对于此后的话，我会介绍一些更复杂的场景，例如此前提及到的，在客户端上面，使用Jade模板引擎进行单页面应用的开发，减少界面复杂度。相信，结合AngularJs后，单页面应用会做得更加轻松。好好体验吧！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/02/10/2012-e5-b9-b4-e7-bb-88-e6-80-bb-e7-bb-93/" rel="next" title="2012年终总结">
+                <i class="fa fa-chevron-left"></i> 2012年终总结
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/05/15/e6-b7-b1-e5-9c-b3firefox-e6-b4-bb-e5-8a-a8-e6-97-a5/" rel="prev" title="深圳FireFox活动日">
+                深圳FireFox活动日 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Cash" />
+          <p class="site-author-name" itemprop="name">Cash</p>
+          <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/cashlee96347" target="_blank">
+                  
+                    <i class="fa fa-instagram"></i> Instagram
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/lbj96347" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Cash</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
