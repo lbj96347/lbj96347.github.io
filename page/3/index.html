@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,18 +27,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -50,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -60,7 +87,7 @@
 <meta name="description" content="I would like now to seriously indifferent room of wonderful.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Casual & Fellow">
-<meta property="og:url" content="http://lbj96347.github.io/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
 <meta property="og:site_name" content="Casual & Fellow">
 <meta property="og:description" content="I would like now to seriously indifferent room of wonderful.">
 <meta name="twitter:card" content="summary">
@@ -69,19 +96,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+
+
+
+
 
   <title> Casual & Fellow </title>
 </head>
@@ -120,7 +163,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Cash is King</p>
+  <p class="site-subtitle">Cash is King :-)</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -141,7 +184,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
           </a>
@@ -151,7 +194,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
           </a>
@@ -161,7 +204,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
           </a>
@@ -174,6 +217,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -188,220 +233,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/06/01/javascript-e8-bf-90-e7-ae-97-e7-ac-a6-e4-bc-98-e5-85-88-e7-ba-a7/">
 
-    
-      <header class="post-header">
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2012/07/12/e5-85-b3-e4-ba-8ephonegap-ef-bc-8c-e5-ad-98-e5-9c-a8-e8-b7-a8-e5-9f-9f-e5-90-97-ef-bc-9f/" itemprop="url">
-                  关于Phonegap，存在跨域吗？
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2012-07-12T00:02:31+08:00" content="2012-07-12">
-              2012-07-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>相信很多做Phonegap开发的朋友，都会遇到一个问题，那就是跨域。其实这个并不是一个问题，因为Phonegap本身不存在跨域，我也对这个概念模糊了很久。我一直以为Phonegap存在跨域问题，所以用了很多稀奇古怪的看法。其实一直都是错误的。那么这里到底是怎么引起的呢？又需要我们如何解决呢？好吧，我们一步一步来分析。</p>
-<p>首先需求很明确，作为一个Web App就必须要实现局部刷新。那么就需要有Ajax来实现这个功能了。一般来说，地球人都会写简单的Ajax嘛，尤其是调用了jQuery后，就更加简单了。代码如下：</p>
-<p><pre>$.ajax({<br>    url : “xxx.com”,<br>    type : “POST”,<br>    dataType: “json”,<br>    data : REQUEST,<br>    success : function (){<br>        console.log(“success”):<br>    }<br>});</pre><br>好了，问题就来了。请求后发现浏览器报错，一看console，就发现原来是跨域问题引起的。好吧，跨域问题嘛，我用jsonp，或者是getScript的办法来解决不就好了。但是如果这里面涉及到一些敏感数据的传输，这就危险了，因为我们都知到jsonp或者getScript的f办法都是用GET的办法来传输数据的。那么我硬是用POST的办法来传，怎么办呢？</p>
-<p>于是我们就开始查询Phonegap的文档了。找啊找，终于看到Phonegap wiki里面说： “The cross-domain security policy does not affect PhoneGap applications. Since the html files are called by webkit with the file:// protocol, the security policy does not apply.”</p>
-<p>对啊！Phonegap本身就没有什么安全问题的限制，是允许跨域请求的啊。这里面到底是出了什么问题呢？于是一连串的调试就开始了。查了好多的文档，问了好多的人。到最后经过Jeff兄的帮忙，看到JQUERY MOBILE的一篇文章，提及到jQuery默认对跨域请求有一定的限制。于是就找到了代码：$.support.cors = true;</p>
-<p>设定后，跑动Javascript代码，完事！原来这一切都是因为jQuery引起的。这个小问题困扰了我好几天。有时候再多的聪明也不能够弥补经验上面的缺失啊。所以平时还是要多多练手啊。由于这次的请求我是需要修改header的，所以也把header修改的demo代码在这里和大家分享一下吧。没有经验的朋友赶紧练手哦。</p>
-<p><pre>function makeRequest() {<br>  $.support.cors = true;<br>  var settings = {<br>    type: “POST”,<br>    url: URL,<br>    data: REQUEST,<br>    dataType: “json” ,<br>    error: function(XHR,textStatus,errorThrown) {<br>        alert(XHR);<br>        alert(“textStatus: “ + textStatus);<br>        alert(“errorThrown: “ + errorThrown);<br>        //alert (“XHR=”+XHR+”\ntextStatus=”+textStatus+”\nerrorThrown=” + errorThrown);<br>  },<br>  success: function(data) {<br>    //alert(“ok啦”);<br>    //$(“body”).append(data);<br>    alert(JSON.stringify(data));<br>    alert(data.status);<br>    alert(data.message);<br>  },<br>  headers: {<br>    “Access-Control-Allow-Origin” : “xxx.com”,<br>    “Access-Control-Allow-Headers” : “X-Requested-With”,<br>    “X-CASH” : “xxx”,<br>    “X-Lee” : “xxx”,<br>    “X-HELLO” : “xxx”,<br>    “X-WORLD” : “xxx”,<br>  }<br>  };<br>  $.ajax(settings);<br>}<br>//执行请求<br>makeRequest();</pre><br>这个问题我此前一直有误解。所以在此向看过我PPT分享的朋友说声对不起。大家日后在使用JS库的时候，要看看一些库的默认属性，看看会不会影响到API的调用。不然这会盲目地浪费好多时间在无谓的事情上面。希望大家引以为鉴，我也会好好复习jQuery的。而且Phonegap是一个很强大的框架，可惜的是国内的开发者难以集中起来，出了问题不太好解决，我一般都是上stackoverflow上面咨询的。希望国内的开发者能够踊跃地聚集起来，让这个好的开发工具发扬光大吧。</p>
-<p>刚刚提及到安全问题，借此我也说说Phonegap在面对这个问题的时候可能会出现的情况。刚刚解决了跨域问题（实质上并没有跨域，也就是说这样传输数据是安全的），但是不代表没有了安全问题。因为这些应用的逻辑是在JS中实现的，那么核心的代码也会在JS中。这有什么问题呢？问题就在这里了，一般ipa（以ios应用为例），如果被不法分子下载后，反编译去获取ipa文件的代码，可能就可以将js文件重新解析出来。这时候，安全的key等东西就可能会被获取。这个时候一般有几个解决办法：</p>
-<p>1,混合到obj-c的代码中（虽然听起来有点高级，不过是可以实现的，这里补充一句，学习obj-c对phonegap开发有莫大的好处）；</p>
-<p>2,利用一些压缩的技术，混合到一些png文件中，这就好像此前有人压缩js代码一样，混合进取；</p>
-<p>3,自己实现一套比较好的加密机制；</p>
-<p>4,对代码进行加密，混淆，尽最大限度地不让竞争对手或者是不法分子难以破解。</p>
-<p>好的，大概经验就分享到这里了。我遇到问题的时候还会在线上进行提问的。希望大家能够多多交流！:-)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2012/06/19/e5-86-8d-e6-ac-a1-e6-9b-b2-e7-ba-bf-e6-95-91-e5-9b-bd-e8-b0-83-e7-94-a8sae-e4-b8-b4-e6-97-b6-e6-96-87-e4-bb-b6/" itemprop="url">
-                  再次曲线救国-调用SAE临时文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2012-06-19T13:47:39+08:00" content="2012-06-19">
-              2012-06-19
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近在实用腾讯微博开放平台的sdk（2.0版本）搞一些小玩意。使用到腾讯微博的更新头像Api user/update_head 更新用户头像。</p>
-<p>在sdk当中，调用的方法其实是非常简单的。</p>
-<p>只是需要：</p>
-<p>$multi = array(‘pic’ =&gt; ‘images/test.jpg’);<br>$r1 = Tencent::api(‘user/update_head’, $params, ‘POST’, $multi);</p>
-<p>这样我们就可以利用php，实现更新头像的动作了。不过如果我的图片很多，而且是动态生成的，那么这就使得图片并不是固定的，那么我们应该怎么处理呢？刚刚开始的时候我也走了很多的弯路。下面直接告诉大家路怎么走就好了。</p>
-<p>首先我们来分析一下这句代码：</p>
-<p>Tencent::api(‘user/update_head’, $params , ‘POST’ , $multi );</p>
-<p>在api函数里面，有四个参数：1,调用的api的接口；2,调用api的参数，在腾讯微博开放平台发布出来的2.0版本sdk中，这里的参数已经封装好，无须用户再次去处理填写，在1.0的版本当中，用户需要自己获取上传文件的base64数据，并post才可以，而2.0中都已经封装好了；3,就是请求的方式啦，这个没有什么好说的；4,最后一个就是post文件的本地路径了（注意，这里就是指路径）；</p>
-<p>好了，问题来了，SAE上面，Memcache以及Storage服务缓存下来的文件都不是本地路径当中的，因为根据SAE的调用方法，Memcache以及Storage调用的东西都分别在saemc://或者saestor://作为路径前缀进行调用。而这样调用的话无法获取本地路径。</p>
-<p>最后我使用了tmpfile()的函数，把动态的图片文件生成出来后先把数据缓存到一个本地文件。然后找到这个文件的本地路径再post出去。</p>
-<p>通过echo SAE_TMP_PATH;输出SAE的缓存文件路径，发现是：</p>
-<p>sys tmp file path</p>
-<p>/saetmp/619/[yourdomain]/1340077764_3893208519</p>
-<p>命名规则：/saetmp/日期/domain名字/time()_<em>*</em> （未知）</p>
-<p>通过echo <strong>FILE</strong>; 找到这个php脚本SAE的文件路径。</p>
-<p>最后POST的时候使用一堆的路径查找符号，找到缓存图片。</p>
-<p>如：$multi = array(‘pic’ =&gt; ‘../../../../../..’.SAE_TMP_PATH.’/test.jpg’);</p>
-<p>问题解决 :-)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -423,13 +274,19 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2012-06-01T11:33:43+08:00" content="2012-06-01">
-              2012-06-01
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-06-01T11:33:43+08:00">
+                2012-06-01
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -441,6 +298,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -470,6 +331,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -487,13 +353,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/04/27/e7-ae-80-e5-8d-95-e6-90-ad-e5-bb-bapath-to-weibo-e4-bf-a1-e6-81-af-e6-a1-a5-e6-a2-81/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -515,13 +394,19 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2012-04-27T03:56:55+08:00" content="2012-04-27">
-              2012-04-27
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2012-04-27T03:56:55+08:00">
+                2012-04-27
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -533,6 +418,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -567,6 +456,11 @@
     <div>
       
     </div>
+
+    <div>
+      
+    </div>
+
 
     <footer class="post-footer">
       
@@ -616,10 +510,10 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
+               src="/images/avatar.gif"
                alt="Cash" />
           <p class="site-author-name" itemprop="name">Cash</p>
           <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
@@ -627,7 +521,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -644,7 +538,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -656,49 +550,16 @@
 
         <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.instagram.com/cashlee96347" target="_blank">
-                  
-                    <i class="fa fa-instagram"></i> Instagram
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-twitter"></i> Twitter
-                  
-                </a>
-              </span>
-            
-          
         </div>
 
         
         
 
         
-        <div class="links-of-blogroll motion-element">
-          
-        </div>
+        
+
+        
+
 
       </section>
 
@@ -724,8 +585,9 @@
   <span class="author" itemprop="copyrightHolder">Cash</span>
 </div>
 
+
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -736,7 +598,9 @@
 </div>
 
 
+        
 
+        
       </div>
     </footer>
 
@@ -747,12 +611,6 @@
 
   
 
-
-  
-
-
-
-
 <script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
@@ -760,37 +618,10 @@
 </script>
 
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
 
 
 
-  
-  
 
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
@@ -799,16 +630,70 @@
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
   
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>

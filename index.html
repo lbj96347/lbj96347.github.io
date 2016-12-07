@@ -5,10 +5,10 @@
   
 
 
-<html class="theme-next muse use-motion">
+<html class="theme-next muse use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
@@ -27,18 +27,45 @@
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
 
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -50,7 +77,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
 
 
 
@@ -60,7 +87,7 @@
 <meta name="description" content="I would like now to seriously indifferent room of wonderful.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Casual & Fellow">
-<meta property="og:url" content="http://lbj96347.github.io/index.html">
+<meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Casual & Fellow">
 <meta property="og:description" content="I would like now to seriously indifferent room of wonderful.">
 <meta name="twitter:card" content="summary">
@@ -69,19 +96,35 @@
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
 
   <title> Casual & Fellow </title>
 </head>
@@ -120,7 +163,7 @@
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
-  <p class="site-subtitle">Cash is King</p>
+  <p class="site-subtitle">Cash is King :-)</p>
 </div>
 
 <div class="site-nav-toggle">
@@ -141,7 +184,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
           </a>
@@ -151,7 +194,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
           </a>
@@ -161,7 +204,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
           </a>
@@ -174,6 +217,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -188,13 +233,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/30/We-Are-Hiring/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -206,8 +264,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/23/Negotiate-With-Guangzhou-Custom/" itemprop="url">
-                  一个与海关斗智斗勇的小故事
+                <a class="post-title-link" href="/2016/11/30/We-Are-Hiring/" itemprop="url">
+                  We Are Hiring
                 </a>
               
             
@@ -216,13 +274,19 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T10:06:20+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-30T11:42:53+08:00">
+                2016-11-30
+              </time>
+            
+
+            
+
+            
           </span>
 
           
@@ -234,6 +298,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -249,91 +317,295 @@
       
         
           
-            <h2 id="愉快的梗概"><a href="#愉快的梗概" class="headerlink" title="愉快的梗概"></a>愉快的梗概</h2><p>事情是这样的。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/team.jpg" alt="team-tc-discrupt"></p>
-<p><strong><em>图：现场和搭档向老外介绍产品</em></strong></p>
-<p>上周，我们到三藩市参加 <strong>TechCrunch SF Disrupt</strong> 的活动。展出了我们的产品 <strong><a href="https://meshtech.co/" target="_blank" rel="external">Mesh</a></strong> ，一个<strong>基于无人机的团队协作应用</strong>。当然既然山长水远来到美国了，而且图个方便，买一台 3DR SOLO 回国。虽然说 DJI 已经是消费级无人机的龙头了。但对于开发者的支持来说，3DR也算是一家对开发者支持较早的企业，而且目前 3DR 也专注在商业级无人机上面努力，希望能够在商用机上面也占领一定的市场。</p>
-<p>心里想想，起码比国内的淘宝水货便宜好几千块啊。尽管加州的税已经足够重了。但还是便宜。所以后来跑了一趟 BestBuy ，毫不犹豫就买了。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/bestbuy.JPG" alt="best-buy"></p>
-<p><strong><em>图：在 BestBuy 购买后拍照留念</em></strong></p>
-<p>买回来之后，经过一番充电。经过一番配置，冒着生命危险，就到 SF 的 Black Point 飞了一轮。为什么说是冒着生命危险。因为如果一个不好彩，很容易就会被 Cops 抓我回去问话。根据 FAA ，不管是外国人，还是美国公民，如果想要飞无人机，都<strong>需要到 FAA 注册一个证书</strong>，有了允许证书，才允许上路。（商业无人机已经合法，那是另外的事情了）还好，我就低空小飞，并且测试了一下各种参数。就算了。当时已经做好了被抓的准备，于是就拍了这样的一张照片。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/fly.jpg" alt="fly"></p>
-<p><strong><em>图：在 Black Point 飞行</em></strong></p>
-<p><img src="/images/negotiate-with-guangzhou-custom/act.JPG" alt="act"></p>
-<p><strong><em>图：装作被警察抓到</em></strong></p>
-<h2 id="顺利的安检"><a href="#顺利的安检" class="headerlink" title="顺利的安检"></a>顺利的安检</h2><p>几天后，我们就准备从 SFO 到 HKG 。乘坐的是<strong>新加坡航空</strong>。毕竟是全球<strong>最安全的航空公司之一</strong>。所以，也需要做好心理准备，航空公司可能会以<strong>安全</strong>为理由，不允许我携带飞行器上机。毕竟会有大容量的电池，加上那些吓人的遥控器。</p>
-<p>不过新加坡航空的工作人员都很 Nice ，我向他们展示了飞行器的技术参数，以及电池的规格后。他们也查询了一轮，<strong>没有禁令说明不允许携带</strong>。所以我能够随身携带上飞机。此外，也可以提醒一下大家，一般来说电池在 <strong>100wh</strong> 以下，电池容量在<strong>数千 mAh </strong>下，航空公司都是允许携带上机的。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/wait.JPG" alt="wait"></p>
-<p><strong><em>图：等待凌晨一点的飞机</em></strong></p>
-<h2 id="小挫折"><a href="#小挫折" class="headerlink" title="小挫折"></a>小挫折</h2><p>经过了十几个小时的飞行，我在香港休息了一个白天，做了一轮大陆客后，终于开始启程回。顺利地通过了香港海关出入境，开始从廣九直通车回程到广州。又过了两个小时，列车终于到站。我回到了广东大省城，跟大多数海内外的游客一齐，走进这个接近三十年历史的车站。这些游客，有的买了很多 LV GUCCI 包包，有的买了最新的 iPhone 7 ，有的买了梦寐已久的相机，有的买了好玩的游戏机 …</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/hongkong.jpg" alt="hongkong"></p>
-<p><strong><em>图：跟老婆在维多利亚港</em></strong></p>
-<p><img src="/images/negotiate-with-guangzhou-custom/iphone7.jpg" alt="iphone7"></p>
-<p><strong><em>图：最新肾7</em></strong></p>
-<p>带着疲倦的身躯。我拖着沉重的行李，走进了安检通道。突然之间听到身后一把带着浓烈广普风味的声音：</p>
-<p>『这位先生，麻烦你过来一下』。</p>
-<p>我当然需要乖乖配合，带着行李过去。</p>
-<p>海关：『你这个是什么打开来看看。』</p>
-<p>海关：『这个是飞行器，你知道国家不允许携带这些<strong>低空高速飞行器</strong>入境吗？』</p>
-<p>海关：『你是什么国家的？把护照拿出来，跟我来。我们去查查条款。』</p>
-<p>于是，我就只能够拿出护照，一个转身，我的飞行器和护照就被海关暂时收走了。于是便开始了漫长的沟通 …</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/all.jpg" alt="all"></p>
-<p><strong><em>图：拆机查看，并等待海关入仓</em></strong></p>
-<h2 id="多次周旋沟通"><a href="#多次周旋沟通" class="headerlink" title="多次周旋沟通"></a>多次周旋沟通</h2><p>来到了天河海关现场。我看到了好多最新款的 iPhone 啊。真让人大开眼界。有 iPhone 7 也有 iPhone 7 Plus，有金色的，有黑色的，也有亮黑的，实在太帅了。而且还有崭新的，超大的 LV 包包。还有一个非常无辜的，带着一个旧款的录影带播放器入境的，统统都被海关拦截了。</p>
-<p>我们的护照都被收了，当然要乖乖地等海关处理程序了。买 iPhone 7 的好惨啊，有老外，也有中国人，凡是被海关查到的，不管你怎么说，说是自用还是什么，都要被征税。统统上缴了上千大元，才允许放行。一个老外看着我，作出了双手摊开的动作。没办法，谁叫你碰上了<strong>广州海关</strong>啊，都是<strong>金睛火眼</strong>啊。还有那个带旧款录影播放器的，已经是二十年前的款式了，估计是怀旧拿回来玩玩。估计一百块钱都没有人要了，海关还是能够从密密麻麻的征税列表中找到了相关的条款，要求上缴 150元 的税款。真让我大开眼界啊。我心想，这下估计要扣个大钱了。但是，最重要是镇定，应该还没有条款列明这个东西征税，如果是违禁品，那么大疆这些公司岂不是死翘翘了。要想办法沟通。</p>
-<p>终于轮到我。</p>
-<p>我：『你好，请问我这个东西怎么处理呢？』</p>
-<p>海关：『你这个东西比较麻烦哟，国家不允许携带低空高速飞行器入境，所以你得退回去哟。』</p>
-<p>我：『但是国内好多公司生产这个东西，进出口都有啊，不可能限制出入境啊。』</p>
-<p>海关：『这个东西如果要上天飞的话，出入境是两码事哦。如果你要飞，你需要向无线电委员会申请，才可以通过，那你得去找<strong>无线电委员会</strong>开一个证明哦。』</p>
-<p>我：『但是这个东西使用的通讯技术，跟普通的无线电是两码事啊，这个东西使用的是 Wi-Fi，跟手机是一样的技术，而且通讯能力比手机还要弱。』</p>
-<p>海关：『我不管，你应该要去找无线电委员会沟通沟通。否则我们是不会放行的。就是违禁品。』</p>
-<p>心想，好吧。在大家都处于疲倦的情况下，这个事情是很难沟通的。我们就顺从海关的安排，先把飞行器暂存在海关吧。反正有<strong>三个月</strong>的限期，这样的话我三个月之内将这个飞行器退出境内都是可以的。这是最最无耐的做法。而且我还有其他的渠道入境，这样就可以避开金睛火眼的广州海关了。而且这个东西也不是一个武器，如果这就可以威胁到<strong>国家安全</strong>，那就太弱鸡了吧。签署了，<strong>保管协议</strong>，我就把飞行器包好，走过几个特殊的通道（意味着你已经出境了），存放在仓库里头。这个地方的财产价值很大啊，来一次爽一次。可以想象在大型港口，会更爽。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/banaircraft.JPG" alt="banaircraft"></p>
-<p><strong><em>图：美国金门大桥禁止无人机飞行</em></strong></p>
-<p>晚上回去路上，我在想这个事情肯定不能够就这样退回去。而且海关说低空高速飞行器，也没有列表相关的指标啊，而且在征税单中也没有列明。所以，还是有机会能够扳回海关的说法，把这个东西带入境。临走的时候，海关问了我一下：</p>
-<p>『李先生，这个东西可以飞多高，多远』。</p>
-<p>我：『顶多一百米高，数百米远』。</p>
-<p>海关：『好的，我知道了，以后不要随便携带这些东西哦，我可能也要咨询一下<strong>公安</strong>的意见』。</p>
-<p>我想，对哦，公安也能够证明这个东西是安全的还是不安全的，而且也可以查查这个东西是不是明确的违禁品。</p>
-<p>回去后，马上联系了再公安部门工作的亲戚，咨询了情况。看是否普通的无人机也无法带入境，还好发现这些飞行器在公安部门，都没有明确是危险物品不可带入境。但海关的说法『低空高速飞行器无法入境』，到底是哪里的说法呢？我觉得这个事情，还是需要明确。而且『无线电委员会』又是一个怎样神奇的存在，我觉得也需要查清楚。但我已经没有力气了。带着疲倦的身躯，我躺下就到了第二天早上。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/think.JPG" alt="think"></p>
-<p><strong><em>图：在愁各种事情往外看</em></strong></p>
-<p>第二天早上，我回了公司,打开电脑。专门针对『低空高速飞行器』以及『无线电委员会』进行了搜索。你会发现，确实有『低空高速飞行器』入境的限制。但是这种飞行器，到底是怎样的飞行器呢？经过多番的查看，我发现国家其实是<strong>没有明确的规定</strong>的。但是硬是说案例，不是说没有。一般这些被海关查扣，并且限制入境的飞机，一般体积都超级大，一般长度都有 1.5m - 2m ，并且配备高清摄像头，续航一般超久，有的甚至能够通过无线电进行<strong>数十公里的飞行</strong>。这完全就是间谍机啊。而对于『无线电委员会』，确实有这样一个东西，专门管各种无线电通讯的，例如以前那些航模啊，<strong>对讲机</strong>啊，私人电台啊等等。并有专门的技术去限制这些对应设备的出入境，把指南给到海关。还好，目前大部分无人机的通讯，使用的不是对讲机相关的东西，而是我们大家熟知的 Wi-Fi ，如果放到无线电通讯的限制的话，其实都是合规格的，并不会对国家安全产生重大的威胁。如果你买无线电对讲机进来，那就得小心咯。</p>
-<p>有了这些清晰的数据，我马上致电海关，要求把这个东西放行。</p>
-<p>我：『你好，我是 xxx ，我今天查询了一下公安以及无线电委员会的相关。我的飞行器 blah blah blah … 这一切都是符合规定的。国家确实对低空高速飞行器有限制，但限制的是<strong>军事级别的无人机</strong>，但我们这种不是军事级别的无人机。如果你硬是要给一个定义给它，它是：<strong>飞行玩具</strong>。』</p>
-<p>海关：『这样 … 』</p>
-<p>我：『是的。通讯是合规格的，而且价值也不超过公民允许携带的 5000元 范畴（实际这台飞行器的售价只是 $499 ）。而且，我的飞行器，连摄像头都没有，完全不是一个<strong>影视系统</strong>。（事实也是，3DR SOLO 是需要 GoPro 相机完成 Camera 的工作）这样的话，应该是允许放行。』</p>
-<p>海关：『好吧，你过来一趟吧，我们叫上公安备案。』</p>
-<p>终于松开了金口，这下子应该是有戏了。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/uber.PNG" alt="uber"></p>
-<p><strong><em>图：运气很好啊，出发拼车去海关，坐上一台崭新的宝马3系</em></strong></p>
-<p>第二天下午在海关沟通，我再一次走过了各种神秘的通道，进入一个中间地带。在一个空调 16度 的小房间里坐了下来。</p>
-<p>海关微笑地说：『李先生，你稍微等等啊，我去帮你办一下手续，比较多程序，需要一段时间。』</p>
-<p>在这个冷到死的小房间，我等了 45 分钟，各种手续终于办妥了。后来咨询了海关，原来这个手续，包含了：我的护照在临时的派出所备案，查询我是否有案底或者违法的出入境记录，允许临时出境。并且将我的飞行器从海关仓库中改变状态，申请放行，过这边大 Boss 的审批，通知各层的放行人员。</p>
-<p>终于我可以去仓库门口了。</p>
-<p>海关：『你需要将你<strong>亲手封好</strong>飞行器，<strong>亲手解封</strong>，过程我们不会参与』。</p>
-<p>在这个过程里面，突然有一个小分队走了过来，大概是10个海关部门的工作人员，其中有一个应该是他们的大 Boss 吧。</p>
-<p>海关Boss：『陈Sir，这个就是你说要放行的飞行器吧？… 所以以后我们对于这种飞行器，如果合规格也应该放行了。我们应该定义为什么好呢？』</p>
-<p>陈Sir（一直跟我沟通那位）：『这个，这个是<strong>飞行玩具</strong>。』</p>
-<p>海关Boss：『嗯，这是一个玩具』（托着下巴，若有所思地说）</p>
-<p>我向广州海关伸出友谊之手，表示握手感谢放行。感谢党和国家啊，认可我们好好去玩玩具的人。一番言谢之后我就准备离开海关了。</p>
-<p>临走前，陈Sir建议：『李先生啊，这种东西以后在国家有<strong>大型活动</strong>的期间，还是少带，不然海关有一万种理由拒绝出入境。而且每个国家的法律都不一样。此外，这些东西的法律定义还不够明确，还是小心点好啊。海关还是按照规章制度办事的。一下子还真不好搞。总是小心。不过你这东西还挺好玩，我回去也跟我儿子搞一个。』</p>
-<p>一番哈拉之后，我带着飞行器过了重重的小通道，走出了历史悠久的广州东站。</p>
-<h2 id="顺利回归"><a href="#顺利回归" class="headerlink" title="顺利回归"></a>顺利回归</h2><p>回来后，又要努力工作了，恰好 GoPro 也发布了 Karma ，我想又要准备入手玩玩了，这是一台对大疆极其具备威胁性的飞行玩具啊。我觉得还是会碰到类似的问题，而且未来也一定会有人跟我一样会遇到同样的问题。还是把整个过程记录下来，方便大家参考吧。希望大家以后不会碰壁。去其他国家，也同样需要注意当地的法律法规，否则只能够哑巴吃黄连了。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/karma.PNG" alt="GoPro Karma"></p>
-<p><strong><em>图：GoPro Karma 套装组合，有无人机，相机，以及一个手持云台，一体化</em></strong></p>
-<p>我觉得这个过程挺好的，某种程度上也说明自己在做的事情确实走在一个不明朗的阶段，但是科技只会不断进步，不会倒退，相信 <strong>Drone</strong> 会在以后更多地带给大家正面的影响和好处。我想，如果你也想要有这个神奇的体验，欢迎你加入进来。</p>
-<p><a href="https://kiwiinc.net/join" target="_blank" rel="external">Kiwi 职位通道</a></p>
-<p>产品也快要上线了，我们需要更多的<strong>产品经理</strong>，<strong>iOS 工程师</strong>， <strong>云计算工程师</strong> 等。在 TechCrunch 这一程认识了好多人。其实那几天挺累的，我把牛仔裤穿烂了，把鞋子走烂了。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/me.JPG" alt="me"></p>
-<p><strong><em>图：我在会场公司展位前</em></strong></p>
-<p>最最大鼓舞的，不是有多少投资人对我们产品感兴趣，而是一个一个的满怀激情 MIT 学生跑过来说：</p>
-<p>『我太爱你们的东西了，我可以进来吗？我不要钱。你们在三藩市吗？真的，我很喜欢。』</p>
-<p>还有还有，就是大家熟知的 <a href="http://www.hbo.com/silicon-valley" target="_blank" rel="external">Silicon Valley</a> 的制片之一，道具负责人 Jared ，还认真地讨论我们的东西，也许会成为我们第一个大大的顾客。</p>
-<p><img src="/images/negotiate-with-guangzhou-custom/jared.jpg" alt="jared"></p>
-<p><strong><em>图：HBO 的 Jared 在我们的展台</em></strong></p>
-<p>Have you ever written some code to handle gyro? 如果有，赶紧来！</p>
+            <h2 id="Who"><a href="#Who" class="headerlink" title="Who"></a>Who</h2><p>我们是来自中国广东的初创团队，成立于 2013 年。最早的时候，我们做了用家生活，用家，<a href="https://liubaiapp.com/" target="_blank" rel="external">留白</a>，目前我们正在全力推进 <a href="https://meshtech.co/" target="_blank" rel="external">Mesh</a>。目前我们 Base 在广州。我们是一个叛逆的，热衷于创新，打破陈规的团队。我们注重科技与艺术。创业三年多，给了整个团队很多的技术积淀，商业积淀。我们有来自毕业于国内优秀高校的初创团队成员，有海外深造背景的专业设计师，也有充满激情的外籍 Geek。 </p>
+<p>创业几年，经历过高速成长，也经历过一定的低谷，我们始终坚信利用技术的力量去创造价值。</p>
+<h2 id="What"><a href="#What" class="headerlink" title="What"></a>What</h2><p><a href="https://meshtech.co/" target="_blank" rel="external">Mesh</a> 是一个基于无人机的协同应用。目前的产品形态是一个在手机上面的 App。Mesh 的意义在于为无人机（或者类无人机设备）提供一个网络，让多人与多机之间能够产生协同的工作流。</p>
+<p>区别于其他的无人机软件厂商，我们构建的是一个新的网络，保证到地面以及空中的设备联动工作，此外我们还实现了基于无人机的完整工作流。能够在不同的场景中使用，提升工作的效率以及节省成本。可应用的领域如：电路巡检，体育训练，电影拍摄，救援行动以及农业数据，深林养护等。我们也在这些领域中建立了一定的合作关系，包括能源，体育以及电影拍摄行业。利用新的技术以及设备，为产业升级作为一点点的贡献。</p>
+<h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p><strong><em>初衷</em></strong></p>
+<p>我们始终坚信，未来将会在很长一段时间里，人与机器人会紧密地协同工作。在这个过程中，有一个咒语在让这一切都来得更快：Software is eating the world. 在未来，也许我们不会以今天的态度去看待机器人。我们会把机器人当成我们的伙伴，当做是我们生活中密不可分的一部分。机器人就好像未来的生物一样，对世界产生越来越深远的影响。所以，我们不遗余力地希望把这个未来去实现出来。 Mesh 正是一个连接人与机器的产品，我们希望让人与机器的网络效应释放更大的魔力。</p>
+<p><strong><em>时代</em></strong></p>
+<p>站在 21 世纪的开端，我们经历了互联网泡沫，我们经历了疯狂的移动互联网，而今天我们即将踏入一个新的时代，这个时代是：IoT。在这个时代里面，计算机的形态以及演变成各种各样，也许是一个 VR / AR Headset，也许是一个 Drone，也许是一个 Watch。也许你会认为太快，事实是真的这么快。不同领域的 IoT 设备上面，他们也许都有的智能手机的影子（ 元件组成：GPS, Gyroscope, Camera … )，他们将会带领计算机进入一个新的时代。在智能手机销量停滞的年份里，我们选择了一个高速增长的领域。 </p>
+<h2 id="Photos-amp-Videos"><a href="#Photos-amp-Videos" class="headerlink" title="Photos &amp; Videos"></a>Photos &amp; Videos</h2><p><strong> 公司部分无人机 </strong> </p>
+<p><img src="/images/we-are-hiring/aircrafts.JPG" alt="aircraft"></p>
+<p><strong> 应用案例测试 </strong></p>
+<p><img src="/images/we-are-hiring/testflight.JPG" alt="testflight"></p>
+<p><strong> Mesh 应用 </strong></p>
+<p><img src="/images/we-are-hiring/mesh.JPG" alt="Mesh"></p>
+<p><strong> Mavic Pro </strong></p>
+<p><img src="/images/we-are-hiring/mavic.JPG" alt="MavicPro"></p>
+<p><strong> 开放式办公以及讨论环境 </strong></p>
+<p><img src="/images/we-are-hiring/meeting.JPG" alt="meeting"></p>
+<p><strong> TechCrunch Disrupt 参展 </strong></p>
+<p><img src="/images/we-are-hiring/disrupt.jpg" alt="techcrunch"></p>
+<p><strong> 周边环境 </strong> </p>
+<p><img src="/images/we-are-hiring/zhujiangnewtown.jpg" alt="zhujiangnewtown"></p>
+<p><strong> 广州城区天空 </strong></p>
+<p><img src="/images/we-are-hiring/guangzhou.jpg" alt="guangzhou"></p>
+<p><strong> 工位外城市景观 </strong></p>
+<p><img src="/images/we-are-hiring/cantontower.JPG" alt="cantontower"></p>
+<p><strong> 部分团队成员聚会 </strong></p>
+<p><img src="/images/we-are-hiring/team.jpg" alt="team"></p>
+<p><strong> Shot Test Video </strong></p>
+<p><a href="https://www.youtube.com/watch?v=nfsgmFJMV0E" target="_blank" rel="external">YouTube: Mesh Voice Test Video</a></p>
+<h2 id="Wanted"><a href="#Wanted" class="headerlink" title="Wanted"></a>Wanted</h2><h4 id="整体要求"><a href="#整体要求" class="headerlink" title="整体要求"></a>整体要求</h4><ul>
+<li>热爱自己的职业以及所处行业</li>
+<li>自我驱动，结果导向  </li>
+<li>具有一定的科技信仰</li>
+<li>本科或以上学历，具备一定的英语读写能力</li>
+</ul>
+<h4 id="整体福利"><a href="#整体福利" class="headerlink" title="整体福利"></a>整体福利</h4><ul>
+<li>全 Mac 工作环境，矽谷工作流软件配套</li>
+<li>无限试玩以及测试最新无人机设备</li>
+<li>免费零食</li>
+<li>珠江江景办公环境</li>
+<li>开放式办公</li>
+<li>鼓励开源</li>
+<li>免费科学上网环境</li>
+<li>期权激励计划</li>
+</ul>
+<h4 id="Javascript-工程师"><a href="#Javascript-工程师" class="headerlink" title="Javascript 工程师"></a>Javascript 工程师</h4><p><strong><em>客户端方向</em></strong></p>
+<p>内容：在 Mesh 的应用里面负责构建各种行业应用，以及处理 Mesh Package 的构建工作流，打包工具等。</p>
+<p>得到：</p>
+<ol>
+<li>进入科技行业最前沿领域</li>
+<li>充满激情的团队伙伴</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉 ES6/ES7 语法</li>
+<li>熟悉一些时下常用的前端框架，例如: ReactNative</li>
+<li>熟悉前端开发环境的配置</li>
+<li>对混合应用（ Hybrid App ）开发有一定经验</li>
+<li>对 JSPatch, WebViewJavascriptBridge 等开源项目熟悉</li>
+<li>需要提供 Github 以及 个人博客账户</li>
+</ol>
+<p>薪酬：10K/mon - 12K/mon RMB 税前（期权激励另计）</p>
+<p><strong><em>服务端方向</em></strong></p>
+<p>内容：负责 Mesh 云计算业务对接，以及 API 处理，以及各种事件流的处理</p>
+<p>得到：</p>
+<ol>
+<li>进入科技行业最前沿领域</li>
+<li>充满激情的团队伙伴</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉 ES6/ES7 语法</li>
+<li>熟悉使用相关的 Javascript Web Framework.</li>
+<li>熟悉开发环境的配置，掌握除 Javascript 以外的常用服务端编程脚本语言</li>
+<li>对网页开发以及客户端开发有简单的经验</li>
+<li>需要提供 Github 以及 个人博客账户</li>
+</ol>
+<p>薪酬：10K/mon - 15K/mon RMB 税前（期权激励另计）</p>
+<p><strong><em>Web 方向</em></strong></p>
+<p>内容：负责 Mesh Web业务的前端开发，包括管理前端工作流以及公司其他相关的 Web 前端业务</p>
+<p>得到：</p>
+<ol>
+<li>进入科技行业最前沿领域</li>
+<li>充满激情的团队伙伴</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉 ES6/ES7 语法</li>
+<li>熟悉一些时下常用的前端框架，例如: ReactJS, Vue.js 等</li>
+<li>熟悉前端开发环境的配置</li>
+<li>对混合应用（ Hybrid App ）开发有一定经验加分</li>
+<li>对 JSPatch, WebViewJavascriptBridge 等开源项目熟悉</li>
+<li>需要提供 Github 以及 个人博客账户</li>
+</ol>
+<p>薪酬：8K/mon - 11K/mon RMB 税前（期权激励另计）</p>
+<h4 id="iOS-工程师"><a href="#iOS-工程师" class="headerlink" title="iOS 工程师"></a>iOS 工程师</h4><p><strong><em>底层工程方向</em></strong></p>
+<p>内容：负责处理 iOS 设备底层网络通讯，视频流处理，iOS 应用架构以及 iOS 工程中 Mesh Package 模块的管理</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境；</li>
+<li>高于行业平均水平的薪资；</li>
+<li>高端设备随你把玩；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>精通 iOS 开发，能熟练使用 Swift 语言</li>
+<li>熟悉 TCP/UDP 网络协议，有处理视频流等经验</li>
+<li>具有积极向上的学习态度</li>
+<li>对生活充满热情，对人生具有眼界</li>
+<li>熟悉 OpenCV 以及图像处理的加分</li>
+<li>需要有与智能硬件对接的经验，或者本身是开源硬件爱好者或者开发者，需要提供作品</li>
+<li>提供 Github 账户 以及 技术博客</li>
+</ol>
+<p>薪酬：12K/mon - 20K/mon RMB 税前（期权激励计划另计）</p>
+<p><strong><em>界面组件方向</em></strong></p>
+<p>内容：负责 Mesh iOS版本应用界面组件开发，以及界面组件标准化工作</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境；</li>
+<li>高于行业平均水平的薪资；</li>
+<li>高端设备随你把玩；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>精通 iOS 开发，能熟练使用 Swift 语言</li>
+<li>熟悉 iOS UIKit 以及相关开源组件</li>
+<li>具有积极向上的学习态度</li>
+<li>对生活充满热情，对人生具有眼界</li>
+<li>需要有与智能硬件对接的经验，或者本身是开源硬件爱好者或者开发者，需要提供作品</li>
+<li>提供 Github 账户 以及 技术博客</li>
+</ol>
+<p>薪酬：10K/mon - 15K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="Android-工程师"><a href="#Android-工程师" class="headerlink" title="Android 工程师"></a>Android 工程师</h4><p><strong><em>底层工程方向</em></strong></p>
+<p>内容：负责处理 Android 设备底层网络通讯（包括蓝牙以及 Wi-Fi 通讯模块），Android 应用架构以及 Android 工程中 Mesh Package 模块的管理</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境；</li>
+<li>高于行业平均水平的薪资；</li>
+<li>高端设备随你把玩；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>精通 Android 开发，能熟练使用 Java 语言</li>
+<li>熟悉 TCP/UDP 等网络协议，有处理视频流，以及蓝牙，Wi-Fi 模块编程经验优先</li>
+<li>具有积极向上的学习态度</li>
+<li>对生活充满热情，对人生具有眼界</li>
+<li>熟悉 OpenCV 以及图像处理的加分</li>
+<li>需要有与智能硬件对接的经验，或者本身是开源硬件爱好者或者开发者，需要提供作品</li>
+<li>提供 Github 账户 以及 技术博客</li>
+</ol>
+<p>薪酬：12K/mon - 20K/mon RMB 税前（期权激励计划另计）</p>
+<p><strong><em>界面组件方向</em></strong></p>
+<p>内容：负责 Mesh Android 版本应用界面组件开发，以及界面组件标准化工作</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境；</li>
+<li>高于行业平均水平的薪资；</li>
+<li>高端设备随你把玩；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>精通 Android 开发，能熟练使用 Java 语言</li>
+<li>熟悉 Android User Interface 的使用以及相关开源组件</li>
+<li>具有积极向上的学习态度</li>
+<li>对生活充满热情，对人生具有眼界</li>
+<li>需要有与智能硬件对接的经验，或者本身是开源硬件爱好者或者开发者，需要提供作品</li>
+<li>提供 Github 账户 以及 技术博客</li>
+</ol>
+<p>薪酬：10K/mon - 15K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="UI-UX-设计师"><a href="#UI-UX-设计师" class="headerlink" title="UI/UX 设计师"></a>UI/UX 设计师</h4><p><strong><em>人机交互方向</em></strong></p>
+<p>内容：Mesh 产品人机交互流程设计，组件交互设计，以及新设备（ VR / AR / Watch / TV / Drone 等设备交互设计）</p>
+<p>得到：</p>
+<ol>
+<li>与传统软件厂商不同的开发体验;</li>
+<li>利用到尖端的技术以及各种智能硬件的人机交互体验；</li>
+<li>舒适自由的发挥空间以及办公配套；</li>
+<li>一群积极向上，自我驱动的工作伙伴</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉掌握掌握一门计算机编程语言</li>
+<li>对于 iOS / Android / Web 等交互设计规范熟悉；</li>
+<li>积极主动学习新的人机交互方式，以及其他相关技术；</li>
+<li>对 IoT 行业，以及相关的产品具有极大的兴趣以及好奇；</li>
+<li>需提供 Dribbble, Behance 账户。</li>
+</ol>
+<p>薪酬：8K/mon - 15K/mon RMB 税前（期权激励计划另计）</p>
+<p><strong><em>界面设计</em></strong></p>
+<p>内容：Mesh 产品以及相关项目的界面设计，以及界面组件化设计，设计标准化等工作</p>
+<p>得到：</p>
+<ol>
+<li>与传统软件厂商不同的开发体验;</li>
+<li>利用到尖端的技术以及各种智能硬件的人机交互体验；</li>
+<li>舒适自由的发挥空间以及办公配套；</li>
+<li>一群积极向上，自我驱动的工作伙伴</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉操作 Sketch / Photoshop 设计移动应用界面；</li>
+<li>对于 iOS / Android / Web 等设计规范熟悉；</li>
+<li>积极主动学习新的人机交互方式，以及其他相关技术；</li>
+<li>对行业，以及相关的产品具有极大的兴趣以及好奇；</li>
+<li>需提供 Dribbble, Behance 账户。</li>
+</ol>
+<p>薪酬：12K/mon - 20K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="OpenCV-数据工程师"><a href="#OpenCV-数据工程师" class="headerlink" title="OpenCV / 数据工程师"></a>OpenCV / 数据工程师</h4><p><strong><em>深度学习方向</em></strong></p>
+<p>内容：利用 Caffe Framework, TensorFlow 等对数据进行分析，针对大客户进行数据处理工作</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境</li>
+<li>高于行业平均水平的薪资；</li>
+<li>利用不同设备采集数据，应对不同的行业问题；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉掌握 C++, Objective-C, C, Python 编程语言；</li>
+<li>有客户端的编程经验；</li>
+<li>熟悉使用 Caffe 并对图像数据进行深度学习，以及分析，用于一些大客户的图像数据分析问题；</li>
+<li>需提供 Github 账户以及个人博客</li>
+</ol>
+<p>薪酬：15K/mon - 20K/mon RMB 税前（期权激励计划另计）</p>
+<p><strong><em>客户端以及应用方向</em></strong></p>
+<p>内容：利用 OpenCV 以及相关框架编写客户端模块，在应用层提供的视觉分析以及处理</p>
+<p>得到：</p>
+<ol>
+<li>轻松愉快，自由放松的工作环境</li>
+<li>高于行业平均水平的薪资；</li>
+<li>高端设备随你把玩；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉掌握 C++, Objective-C, C, Python 编程语言；</li>
+<li>有客户端的编程经验；</li>
+<li>熟悉使用 OpenCV 并对实时视频流数据进行处理；</li>
+<li>需提供 Github 账户以及个人博客</li>
+</ol>
+<p>薪酬：15K/mon - 20K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="项目经理"><a href="#项目经理" class="headerlink" title="项目经理"></a>项目经理</h4><p><strong><em>项目进度管理</em></strong></p>
+<p>内容：管理 Mesh 应用开发进度，以及调配开发任务，做任务安排规划</p>
+<p>得到：</p>
+<ol>
+<li>将会遇到无人机，计算机视觉等前言的科技；</li>
+<li>跟一群不默守陈规，喜欢颠覆突破的人在一起工作；</li>
+<li>构建一个可拓展，将会开辟一个新世界的产品，利用无人机以及新的影像系统让世界变得更加美好；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>你需要具备一定的计算机科学的知识。至少掌握一门编程语言</li>
+<li>懂得敏捷开发团队的管理</li>
+<li>熟悉使用现代化的团队协作工具进行产品开发管理</li>
+<li>需要工程师背景，即从 Programmer 转 PM</li>
+<li>需要有智能硬件，或者相关项目研发背景，熟悉智能硬件与软件对接的经验（无人机项目以及爱好者加分）</li>
+</ol>
+<p>薪酬：8K/mon - 11K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="产品经理"><a href="#产品经理" class="headerlink" title="产品经理"></a>产品经理</h4><p><strong><em>技术型产品经理</em></strong></p>
+<p>内容：利用无人机，Computer Vision，以及其他相关技术，打造无人机行业应用</p>
+<p>得到：</p>
+<ol>
+<li>将会遇到无人机，计算机视觉等前言的科技；</li>
+<li>跟一群不默守陈规，喜欢颠覆突破的人在一起工作；</li>
+<li>构建一个可拓展，将会开辟一个新世界的产品，利用无人机以及新的影像系统让世界变得更加美好；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>你需要具备一定的计算机科学的知识。至少掌握一门编程语言</li>
+<li>懂得敏捷开发团队的管理</li>
+<li>熟悉使用现代化的团队协作工具进行产品开发管理</li>
+<li>需要工程师背景，即从 Programmer 转 PM</li>
+<li>需要有智能硬件，或者相关项目研发背景，熟悉智能硬件与软件对接的经验（无人机项目以及爱好者加分）</li>
+</ol>
+<p>薪酬：10K/mon - 15K/mon RMB 税前（期权激励计划另计）</p>
+<p><strong><em>功能型产品经理</em></strong></p>
+<p>内容：利用无人机解决不同行业的需求，制定 Mesh Mission Package</p>
+<p>得到：</p>
+<ol>
+<li>将会遇到无人机，计算机视觉等前言的科技；</li>
+<li>跟一群不默守陈规，喜欢颠覆突破的人在一起工作；</li>
+<li>构建一个可拓展，将会开辟一个新世界的产品，利用无人机以及新的影像系统让世界变得更加美好；</li>
+</ol>
+<p>技能：</p>
+<ol>
+<li>熟悉移动应用以及网页应用等开发流程</li>
+<li>懂得敏捷开发团队的管理</li>
+<li>熟悉使用现代化的团队协作工具进行产品开发管理</li>
+<li>有互联网项目研发经验，To C 或者 To B 项目均可。</li>
+</ol>
+<p>薪酬：9K/mon - 12K/mon RMB 税前（期权激励计划另计）</p>
+<h4 id="简历投递"><a href="#简历投递" class="headerlink" title="简历投递"></a>简历投递</h4><p>info[at]kiwiinc.net</p>
 
           
         
@@ -343,6 +615,11 @@
     <div>
       
     </div>
+
+    <div>
+      
+    </div>
+
 
     <footer class="post-footer">
       
@@ -361,250 +638,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/06/23/app-e7-bb-99-e4-ba-88-e7-94-a8-e6-88-b7-e7-9a-84-e6-83-85-e6-84-9f-e6-94-af-e6-8c-81/">
 
-    
-      <header class="post-header">
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/25/Start-new-product-in-Drones-or-new-Cameras/" itemprop="url">
-                  Start new product in Drones or new Cameras
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-25T10:52:45+08:00" content="2016-05-25">
-              2016-05-25
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在思考产品的时候，我的思路基本上是这样的走向：</p>
-<p>增长领域 -&gt; 横向、纵向切入点 -&gt; 对比大公司走向 -&gt; 对比用户需求 -&gt; 根据用户需求以及增长走向，结合现有产品基础，思考下一步产品走向</p>
-<p>我对未来的构想：最终机器也能够和人有感情地沟通，机器会协助人完成越来越多的任务。人类在未来世界的存在，在于心智，在于创造有启发性的东西。人类的浪漫的，富有创意的，感性的。</p>
-<h2 id="目前无人机领域企业生态"><a href="#目前无人机领域企业生态" class="headerlink" title="目前无人机领域企业生态"></a>目前无人机领域企业生态</h2><p><strong><em>计算机视觉技术</em></strong>：<a href="http://www.movidius.com" target="_blank" rel="external">Movidius</a> 提供 VPU 计算机视觉芯片以及SDK支持计算机视觉的应用（可被应用于可穿戴设备，安保设备，无人机，移动设备）</p>
-<p><strong><em>计算机视觉技术</em></strong>： <a href="http://skydio.com" target="_blank" rel="external">Skydio</a> 提供计算机视觉相关算法以及软件、硬件，利用计算机视觉去控制以及优化无人机飞行，可应用于娱乐，以及相关专业领域。由此可见Skydio与Movidius在某些维度上存在竞争点，主要是无人机领域的计算机视觉技术上，存在竞争的点。</p>
-<p><strong><em>无人机解决方案以及一体化技术</em></strong>: <a href="http://dji.com" target="_blank" rel="external">DJI</a>以及其他无人机厂商 提供设备以及开放的接口，消费者购买飞机，并使用。消费者消费的是DJI生产的硬件，『无人机厂商以及第三方开发者开发的各类应用』，Movidius提供的底层的技术。</p>
-<p><strong><em>应用软件开发商</em></strong>: 部分基于无人机的软件开发商</p>
-<h2 id="关于Movidius和Skydio的分析"><a href="#关于Movidius和Skydio的分析" class="headerlink" title="关于Movidius和Skydio的分析"></a>关于Movidius和Skydio的分析</h2><p>目前无人机中的计算机视觉是能够通过设备将摄像头收集的数据，通过处理器，能够快速处理并对设别作出响应。流程图如下：</p>
-<p>Movidius（造价相对高，技术门槛高） 的流程：环境 -&gt; 摄像头 -&gt; 图像数据 -&gt; 数据处理器 -&gt; 无人机控制器 -&gt; 传递到各个动力系统<br>Skydio（造价相对低） 的流程：环境 -&gt; 摄像头+其他Sensor（没GPS） -&gt; 图像数据+其他维度数据 -&gt; 数据处理器 -&gt; 无人机控制器 -&gt; 传递到各个动力系统</p>
-<p>可以预见的未来，计算机视觉的硬件，以及软件都会不断成熟。硬件成熟的表现在硬件的性能提升方面，软件成熟表现在算法的优化，以及可识别的敏感度提升，以及可识别物以及细节会不断增加。</p>
-<h2 id="应用开发层面"><a href="#应用开发层面" class="headerlink" title="应用开发层面"></a>应用开发层面</h2><p>普通开发者能够利用不同的底层接口进行各种Feature以及娱乐功能开发，或者Feature的拼接销售软件，为用户提供服务，以Software Service -&gt; 切入点。DJI或其他厂商提供与硬件对接的SDK支持</p>
-<p><strong><em>切入点优势：</em></strong></p>
-<p>1.对接不同的平台<br>2.利用不同的人机交互技术创建不同的服务支持<br>3.提供学习数据并利用Deep Learning反向应用到不同的计算机视觉应用中<br>4.能够接触到消费者</p>
-<p><strong><em>反向流程:</em></strong></p>
-<p>Software(User Interaction, Cross Several Platforms[Mobile devices and AR/VR], Data) -&gt; Deep Learning + Reaction (Know Customers and provide services to developers or creators) -&gt; Hardware(DJI,Segway,Xiaomi,Wearable Devices)</p>
-<h2 id="大公司期望"><a href="#大公司期望" class="headerlink" title="大公司期望"></a>大公司期望</h2><p>Google 希望开发者能够为AI有所贡献，VR方面创造内容<br>Apple 希望开发者关注健康，以及IoT（家居）<br>DJI 希望开发者关注专业级领域应用开发，更多开发者加入消费级的应用开发<br>Facebook 希望开发者能够关注VR（创建内容），以及AI，让用户能够更多地将数据接入Facebook<br>微软 希望开发者能够为Hololens创建更多内容<br>…</p>
-<h2 id="软件层面怎样去做"><a href="#软件层面怎样去做" class="headerlink" title="软件层面怎样去做"></a>软件层面怎样去做</h2><p><strong><em>面向用户</em></strong>：开发者,消费者（娱乐）,企业消费者（专业）,硬件厂商</p>
-<p><strong><em>产品形态</em></strong>：Cloud,Client,SDK,Platform,Service,Cross Devices</p>
-<p><strong><em>产品流程</em></strong>: Users action or environments —&gt; Hardware and sensors —&gt; Data Collection —&gt; Analytics , AI Process , Training—&gt; Reaction or Interaction with human being or devices —&gt; User’s devices or users —&gt; Service users</p>
-<p><strong><em>目标</em></strong>:  是人机交互达到机器为人提供服务。无论是平台也好，软件也好，AI都会是影响最深的，以后更多地为人提供服务的。具体表现为：</p>
-<p>  1，机器与人协作；<br>  2，沟通是感性的；<br>  3，机器是主动服务的。</p>
-<p>  前提是人与机器能够达到『对等交流』。达成共识后，才能够让机器去做人做不到的事情，这个时候机器才能够算得上是给人提供了帮助。Experience and training help machines to know more things.</p>
-<p>  Movidius 和 Skydio有一个优势，就是在几乎既定的计算机形态中植入，而且技术上能够复用。而Movidius是针对有摄像头的设备，而Skydio是针对无人机。而如果是后面，要向人提供人机交互的反应部分，则因为机器的不同，导致了要作出的反应是不同的。不能够使用同一种方式让机器与人作出交互的响应。就好像动物一样，不同的动物有不同的特性，有些动物吃东西需要用手，有些动物需要用口，有些动物可能是通过外部环境去捕捉。针对人脸识别目前做得优秀的企业是MSQRD，能够较为精确地识别到人的脸部表情，并将一些Mockup植入到人脸当中。在影像的娱乐方面，用户能够利用无人机，移动行走的玩具车，潜水器去实现怎样的任务以及需求，并且这些需求能够持续地为人提供便利。</p>
-<h2 id="需求分析：人类通过动物满足自身需求"><a href="#需求分析：人类通过动物满足自身需求" class="headerlink" title="需求分析：人类通过动物满足自身需求"></a>需求分析：人类通过动物满足自身需求</h2><p><strong><em>飞鸽传书</em></strong></p>
-<p>三千年前人们利用鸽子传递信件，鸽子辨认方向能力很强，嘴巴能够侦测磁体，飞行机动性很强，能够通过地球磁场强度以及三维图像及时在客户端定位并指定方向进行飞行。并且对天敌做到足够的避让。但是只对从上而下的天敌进行避让。</p>
-<p><strong><em>驯鹰捕猎</em></strong></p>
-<p>柯尔克孜族猎鹰驯化分捉鹰、熬鹰、驯鹰三步。猎鹰驯养五六年后，有放鹰的习俗，让鹰自然求偶，在自然界度过余下的数十年。驯鹰时间对鹰极其痛苦，而且时间较长。</p>
-<p><strong><em>犬</em></strong></p>
-<p>狗被用来做各种事情：看家护院、捕猎、拉雪橇、拉车、警用、军用、做宠物、帮助身障人士等。人类在大约在距今18,000年到32,000年之间开始驯养欧洲野狼。</p>
-<p><strong><em>昆虫</em></strong></p>
-<p>昆虫相对低级，难以和人类产生对等交流的信息，因此人类无法利用昆虫强大的飞行能力。再加上昆虫本身的条件反射足够简单，而且对自然的反应较快，所以无法处理复杂的应用。就犹如可行动的简单的Sensor，而且难以和人类产生通讯。所以人类对昆虫的利用一般都是间接性利用，并通过相关复杂的串联反应，解决人类的问题。</p>
-<p>旧工业时代的产品就犹如无脊椎动物一样，器官以及身体结构分离不清晰，但一样具有神经元反射，能够针对特定的事物作出反应，但是不具备相对复杂的条件反射，以及本身能够提供的功能相对单一。在运动的时候不受指令控制，会盲目地根据自己的设定，作出反应。而新的数字时代的产品，就犹如脊椎动物一样，身体各个结构相对清晰，并且具备了学习的能力，并且能够根据学习到的技能，作出相对复杂的反应以及分析。接受指令的控制，并且能够和其他东西进行通讯。但是机器相比动物进化，厉害的地方在于脊椎动物一般没有变态的进化过程，例如牛，人，不能进化到飞行状态，但是机器几乎具备变态的进化能力，能够根据不同的环境去调整自己的装备，最终进化并适合不同场景的工作状态，并且学习不同的技能，作出复杂的反应。</p>
-<p>而人类在历史当中利用脊椎动物，解决的都是满足相对高级的需求，如通讯，捕猎进食，交通出行，弥补身体缺陷，代替人去做事情，或者提升人体部分的能力。如果未来的机器在发展的过程中发生了变态的进化，即『鸽子具有苍蝇的悬停能力，并能够像鹰一样具备强大的高空滑翔能力，并具备更高级的学习能努力，对人作出反应』，这些能力最终很有可能会附加在人上面，让人去做一些更具创造性的东西。</p>
-<p>而在这个过程中，许多围绕人的产品都会出现，但最终可能这些产品都会在人身上。</p>
-<h2 id="根据需求作出定位分析"><a href="#根据需求作出定位分析" class="headerlink" title="根据需求作出定位分析"></a>根据需求作出定位分析</h2><p>如果将DJI市场定位在无人机的话，无人机的市场就会变得相对狭窄了。所以DJI也没有将自己定位在无人机市场上，而是将自己定位在摄影器材领域，计算机视觉学习，机器人开发等不同的领域。因为这样的话能够让自己的应用领域更广。</p>
-<p>所以对于软件开发商来说千万不能够将技术定位在无人机上面，因为无人机深挖的话只有专业级的需求，而是应该定位在不同技术节点的延伸上面，如：摄像头，传感器，定位系统等。</p>
-<h2 id="位于Robots上的摄像头与用户关系分析"><a href="#位于Robots上的摄像头与用户关系分析" class="headerlink" title="位于Robots上的摄像头与用户关系分析"></a>位于Robots上的摄像头与用户关系分析</h2><p><strong><em>核心特点</em></strong>：为自拍者提供了第三者视觉</p>
-<p><strong><em>以无人机为例</em></strong>：</p>
-<p>1.实时空中FPV：比赛，体验飞行<br>2.摄影：创意，全景，高空<br>3.录像：创意，高空，多角度电影，运动记录<br>4.测绘：建模合成，距离，数据采集</p>
-<p>Movidius 以及 Skydio 都在提升计算机视觉相关设备本身的学习能力，分析能力，用以提升整个机器人的运作能力。机器人如果要主动为人提供服务，而机器人对于被服务的人来说，最强的就是既提供了服务，同时也为被服务的人提供了第三者视觉。根据第三者视觉，可以为被服务的人提供怎样的信息参考价值？人在什么时候需要第三者视觉？需要自知，则需要第三者视觉，而第三者不一定是一个人。</p>
-<p>所谓 Third-person View的概念最早是出现在游戏中。action games , action adventure games 都存在 Virtual Camera System的需求，在游戏当中，因为这样能够强化：我虚拟的游戏中，我在监控（控制）游戏人物，游戏的人物角色是我的替身。需要需要一个虚拟的Camera系统。（虚拟-&gt;现实）</p>
-<p><img src="/images/virtual-camera.jpg" alt="Virtual Camera System &amp; Third-person View"><br>(Image from Wiki)</p>
-<p>而我们反观在现实当中，我在现实的游戏中，机器人在监控（控制）我，我是机器人眼里的替身？（现实-&gt;虚拟）这样我能够对自己有更全面更清晰的认知，在现实生活中表现得更好。如镜子，前置摄像头，让用户能够在手机上自拍，实际上就是快速地为用户提供了第三者视觉，让用户更加了解自己，在社群生活中表现得更好。具体需求表现在：</p>
-<p>人需要被拍照的时候<br>人需要运动（动作）训练的时候<br>人需要远行走山路的时候<br>人的视力有限的时候<br>人需要作战的时候</p>
-<p>潜在的技术需求，如：路线，人脸识别，动作，构图，综合分析 … 针对这些东西做开发，数据在云端，并研究如何协助人的各种行为，改变运动模式。要做的是 Reality Camera System ，让 Automative Camera 为『我』提供第三人称视觉，指导我下一步决策。因为Automative Camera 提供的是一个三维的，全面感知的第三方视觉。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/23/Debris-on-my-mind-this-week-2016-05-20/" itemprop="url">
-                  Debris on my mind this week - 2016-05-20
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-23T09:40:44+08:00" content="2016-05-23">
-              2016-05-23
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>任何公司以及产品在决策，以及执行的过程中，都需要自己的一个<strong><em>『动机』</em></strong>。早期驱动力，远见去到什么地方，几乎决定着这件事情的走向以及能够走多远。在之前，我们还没有深入去做Startup的时候，觉得这些话都非常鸡汤。不过，真的开始去做了一些产品，接触了不少的人之后觉得这不是没有道理的。</p>
-<p>Apple 在去年的时候发布了Apple Watch产品，大家能够看到的产品，最容易联想到的是『时尚』，『科技』之类的关键词。但从 <a href="http://time.com/4323318/apple-watch-steve-jobs-health/" target="_blank" rel="external">The Real Reason Apple Made the Apple Watch</a> 我们可以看出，实际上 Apple Watch 的驱动力是来源于希望改进低效的医疗系统以及极其不完善的医疗数据收集系统。也许当这家科技公司的灵魂人物收到疾病的困扰时，一种新的驱动力，刺激出一些新的产品灵感了。</p>
-<p>这也解释了为什么去年 Apple 在 WWDC 上强调 HealthKit 的原因。目前我们能够在 iOS 中看到 HealthKit 的 App 。尽管里面都是数据收集的功能，而且很多数据收集的功能仍然没有被各大厂商开发出来。但是这件事起码在不断的推送过程中。作为一个『跟身』的产品，Apple 希望的是先让人们喜欢上这个东西，然后再利用这个东西去跟踪人们的健康数据。也许真的是Steve Jobs 的癌症治疗过程，启发了这样的一款产品。在健康，运动日益被重视，智能手机销量下降的今天。Apple 也已经释放出信号，Apple Watch 的 App 能够单独运行（脱离原有的 iOS 程序）。可以推断出，今年 Apple 的重点很大一部分会放在 Apple Watch 上面。而整体瞄准的重点，也很有可能是健康，以及物联网终端控制，Voice UI等方面。助力 HeathKit 的发展以及 IoT 的发展。而作为今日霸主地位的 iOS ，将会逐渐退居到二线，继而为专业级的应用功能服务。 搭载 iOS 的设备将会成为一个可移动的控制终端。</p>
-<h2 id="Drones"><a href="#Drones" class="headerlink" title="Drones"></a>Drones</h2><p>关于到 Drone Racing ，我最早了解到的资讯是几个星期前。因为深入了解产品市场，在 Youtube 上面看到了中东土豪在玩无人机比赛。后来也发现 ESPN 早在2015年的时候就已经组织了相对规范的无人机竞速。关于到无人机竞速，已经折射出几个有意思的地方：</p>
-<p>1.无人机设备发展的已经进入一个相对高速增长的年份，表明了市场的增长</p>
-<p>2.因为周边设备 FatShark 的出现，沉浸式的图传体验，直接推进了 Drone Racing 这项赛事的举办，增强了比赛的观感以及趣味性，可能会给其他产品启发</p>
-<p>3.比赛，意味着参赛的选手以及设备几乎都用到了业内相对领先的技术，会促进技术的发展</p>
-<p>4.娱乐形式会吸引观众，进而推进更多的观众投入到这个领域当中</p>
-<p>最近比较让人关注到的 Drone Racing 是在湾区的 Maker Fair 。我相信很快，就会有国内的团体按捺不住，举行一场 Drone Racing ，体验不一样的竞速，不一样的视觉。这里面可能会迸发出一些新的东西。毕竟人家的青少年都在玩得起了，很快我们也不会仅满足于玩玩航拍。</p>
-<h2 id="Creative-things"><a href="#Creative-things" class="headerlink" title="Creative things "></a>Creative things </h2><p>谈及到中国的创新性，很容易会让人觉得闷。包括自己在内，有时候总会觉得自己欠缺些什么，总是少了点创新性。或许是经济的压力，或许是一直都存在于一个压抑的社会当中，或许是因为信息的封闭 … 导致了创新性的确实。最近国内创业很火的领域有关于『内容创作』以及『视频直播』。但如果我们去看同样的两个领域，在 Youtube 上面以及在 Periscope 上面我们看到的内容风格有着天差地别。</p>
-<p>所谓的内容创业，我们更容易接触到的是鸡汤，卖萌，以及秀美丽。但启发性确实少之又少，很容易造成一窝蜂的现象。我认为最大的问题，可能仍然和『驱动力』有很大的关系。要思考，这些内容的创造者，他们最大的驱动力来源于什么地方。如果他们的第一驱动力是来源于金钱的话，那么无疑会影响到他们之后的所有决策。因为Show off，或者是对某种东西着迷，或者是基于某种癖好，这些驱动力所支撑出来的产品，到最后都很有可能会衍生出不同的创造性，或者创新性内容。</p>
-<p>可能会出现转变的时机，经济基础决定上层建筑吧。突破点在于勇敢尝试一下超前的东西，不要怕试错。</p>
-<h2 id="Service-is-future"><a href="#Service-is-future" class="headerlink" title="Service is future"></a>Service is future</h2><p>可以预见的未来，原来越多的软件开源，因为这样能够让软件变得越来越好，各种Feature增长越来越快，越来越人性化。随着3D打印，以及智能硬件创业的星期，各种生产成本会不断下降，硬件制造商的利润也在逐步降低，即硬件制造商难以在生产层面上赚取利润，意味着『硬件免费』（注意，并不一定是绝对的免费）。这意味着意见事情，对于未来，计算机产业很有可能变成一切皆服务，用户会为各种服务付费。</p>
-<p>顺着时间的轨迹，AI在未来的发展会越来越快。大部分人认为，目前 Deep Learning 让 AI 的发展进入了春天，而且随着越来越多的大型科技公司将他们的 AI 技术，无论是软件还是硬件方案，都开源出来，AI 的发展会进入一个相对较快的时期。即在未来，很有可能机器（无论是软件还是硬件层面的）都会为人提供服务。跟人为人提供服务一样。无人机为人智能地拍摄影片，自动驾驶汽车将人安全地送达到目的地等。</p>
-<p>所以，当社会以及各个产业发展下去，服务很有可能是未来社会的经济运作的核心。人与机器将会相互协作解决问题，人能够提供服务，机器也可能够提供服务。产品的价值在于服务，用户会为服务付费。而人的价值在于感性以及创新。</p>
-<p>P.S 可能上面的观点都有点乱，只是一些碎碎念的观点。希望有时间针对不同的观点都可能够展开讨论吧。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -626,24 +679,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2014-06-23T00:18:55+08:00" content="2014-06-23">
-              2014-06-23
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-06-23T00:18:55+08:00">
+                2014-06-23
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -651,7 +710,6 @@
 
                 
                 
-
               
             </span>
           
@@ -663,6 +721,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -722,6 +784,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -739,13 +806,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/05/24/e8-af-bb-e3-80-8c-e5-9c-a8-e5-88-9b-e4-b8-9a-e5-85-ac-e5-8f-b8-e7-9a-84-e4-bd-93-e4-bc-9a-e3-80-8d-e6-9c-89-e6-84-9f/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -767,24 +847,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2014-05-24T00:01:35+08:00" content="2014-05-24">
-              2014-05-24
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-24T00:01:35+08:00">
+                2014-05-24
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -792,7 +878,6 @@
 
                 
                 
-
               
             </span>
           
@@ -804,6 +889,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -845,6 +934,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -862,13 +956,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/05/09/e6-88-91-e8-bf-99-e4-b8-aa-e5-82-bb-e9-80-bc-e5-b7-ae-e7-82-b9-e8-a2-ab-e7-94-b5-e8-af-9d-e8-af-88-e9-aa-97-e4-ba-86/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -890,24 +997,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2014-05-09T10:48:26+08:00" content="2014-05-09">
-              2014-05-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-05-09T10:48:26+08:00">
+                2014-05-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -915,7 +1028,6 @@
 
                 
                 
-
               
             </span>
           
@@ -927,6 +1039,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -961,6 +1077,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -978,13 +1099,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/04/06/e5-85-b3-e4-ba-8e-e5-8c-bf-e5-90-8d-e5-ba-94-e7-94-a8-e7-9a-84-e5-b0-8f-e7-9c-8b-e6-b3-95/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1006,24 +1140,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2014-04-06T01:40:50+08:00" content="2014-04-06">
-              2014-04-06
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2014-04-06T01:40:50+08:00">
+                2014-04-06
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -1031,7 +1171,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1043,6 +1182,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -1075,6 +1218,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -1092,13 +1240,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/11/29/e6-9c-80-e8-bf-91-e5-90-ac-e5-88-b0-e7-9a-84-e5-90-90-e6-a7-bd/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1120,24 +1281,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2013-11-29T14:13:22+08:00" content="2013-11-29">
-              2013-11-29
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-11-29T14:13:22+08:00">
+                2013-11-29
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -1145,7 +1312,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1157,6 +1323,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -1190,6 +1360,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -1207,13 +1382,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/06/10/e5-88-a9-e7-94-a8dropbox-e5-90-8c-e6-ad-a5-e6-9c-8d-e5-8a-a1-e5-99-a8-e9-9d-99-e6-80-81-e6-96-87-e4-bb-b6/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1235,24 +1423,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2013-06-10T10:51:39+08:00" content="2013-06-10">
-              2013-06-10
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-06-10T10:51:39+08:00">
+                2013-06-10
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -1260,7 +1454,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1272,6 +1465,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -1322,6 +1519,11 @@
       
     </div>
 
+    <div>
+      
+    </div>
+
+
     <footer class="post-footer">
       
 
@@ -1339,13 +1541,26 @@
       
 
   
-  
 
   
   
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/05/19/blog-e4-bb-8esae-e8-bf-81-e7-a7-bb-e5-88-b0-e8-87-aa-e5-b7-b1-e7-9a-84-e6-9c-8d-e5-8a-a1-e5-99-a8-e4-b8-8a/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
 
     
       <header class="post-header">
@@ -1367,24 +1582,30 @@
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2013-05-19T20:13:13+08:00" content="2013-05-19">
-              2013-05-19
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-19T20:13:13+08:00">
+                2013-05-19
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+              <span class="post-meta-divider">|</span>
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/未分类/" itemprop="url" rel="index">
                     <span itemprop="name">未分类</span>
                   </a>
@@ -1392,7 +1613,6 @@
 
                 
                 
-
               
             </span>
           
@@ -1404,6 +1624,10 @@
           
 
           
+          
+
+          
+
           
 
         </div>
@@ -1431,6 +1655,298 @@
     <div>
       
     </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/05/15/e6-b7-b1-e5-9c-b3firefox-e6-b4-bb-e5-8a-a8-e6-97-a5/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2013/05/15/e6-b7-b1-e5-9c-b3firefox-e6-b4-bb-e5-8a-a8-e6-97-a5/" itemprop="url">
+                  深圳FireFox活动日
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-15T16:49:19+08:00">
+                2013-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8669944899_d5ac06c7e3_o.jpg" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8669944899_d5ac06c7e3_o-1024x681.jpg" alt="" title="8669944899_d5ac06c7e3_o"></a><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8669943137_0d16c36c82_o.jpg" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8669943137_0d16c36c82_o-1024x681.jpg" alt="" title="8669943137_0d16c36c82_o"></a><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8671047632_5972795cfc_o.jpg" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/8671047632_5972795cfc_o-1024x681.jpg" alt="" title="8671047632_5972795cfc_o"></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>上次到深圳参加了FireFox开发者活动。现场开发一些firefox OS上面的应用。不能说收获非常丰富，但是这次的活动也认识了一些朋友。总的来说感觉Firefox OS还行。</p>
+<p>但是现场就遇到几个Bug以及古怪的地方了。</p>
+<p>1，Zepto.js在os系统下，tap事件无法检测到，但是os实际上是支持touch事件的；</p>
+<p>2，OS竟然不支持中文，application的名字定义为中文的时候，无法build到机器上面，会崩溃；</p>
+<p>3，os的性能颇高的，但是很多api还不够完善。这台机器还是慢慢期待吧！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/05/09/angularjs-e4-b8-8ejade-template-e6-b7-b7-e5-90-88-e4-bd-bf-e7-94-a8-ef-bc-88-e5-88-9d-e6-8e-a2-ef-bc-89/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Cash">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Casual & Fellow">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Casual & Fellow" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2013/05/09/angularjs-e4-b8-8ejade-template-e6-b7-b7-e5-90-88-e4-bd-bf-e7-94-a8-ef-bc-88-e5-88-9d-e6-8e-a2-ef-bc-89/" itemprop="url">
+                  AngularJs与Jade Template混合使用（初探）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2013-05-09T01:09:33+08:00">
+                2013-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/AngularJS-large.png" alt="" title="AngularJS-large"></a><a href="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/logo.png" target="_blank" rel="external"><img src="http://cashwordpress-wordpress.stor.sinaapp.com/uploads/2013/05/logo.png" alt="" title="logo"></a></p>
+<p>此前已经写过两篇关于Jade Template的文章了。AngularJs也在最近的实践当中，当然也少不了希望在AngularJS上面尝试Jade Template。为什么这么说呢，在Angular、 Backbone、 CanJS和 Ember还有其他的一些框架里面，从复杂度，上手速度，以及代码维护量来说，比较可控的是AngularJS是比较优秀的。尤其是使用过Backbone的同学就会知道，有很多的依赖要安装。</p>
+<p>当然，各个框架都有自己优秀的地方，我们应该多尝试，多吸收这些框架给我们开发带来的好处。好，言归正传。这次说是初探，我也纯粹是希望在这里展示一下简单的Demo，让大家理解好模板的概念。其实此前有在客户端以及服务端同时使用Jade的话，这次使用AngularJs应该来说是一点难度都没有的，相对来说还更简单一点。而且AngularJs还提供了更多强大的功能，例如常用的：双向绑定。</p>
+<p>先上会遇到的代码目录，我是在Express.js，Node.js，Jade下使用AngularJs的。<br>routes.js（路由配置）<br>-application/</p>
+<ul>
+<li><p>angular/<br>app.js（应用程序）</p>
+</li>
+<li><p>resource/</p>
+</li>
+<li>js/<br>angular_demo.js<br>-lib/<br>angular.js（angularJs的库）<br>-views<br>index.jade</li>
+</ul>
+<p>这里是route.js的配置</p>
+<p><pre>/<em> 这里是routes.js的配置 </em>/<br>var angularjs = require(‘./application/angular/app.js’);<br>app.get(‘/angular_demo’, angularjs._RENDER );</pre><br>这里是app.js</p>
+<p><pre>exports._RENDER = function ( req , res ){</pre></p>
+<p>  var phones_object = {<br>    ‘series’ : ‘iPhone’ ,<br>    ‘array’ : [<br>      {<br>        ‘name’ : ‘iphone 3gs’ ,<br>        ‘price’ : ‘1000’<br>      },<br>      {<br>        ‘name’ : ‘iphone 4’ ,<br>        ‘price’ : ‘2000’<br>      },<br>      {<br>        ‘name’ : ‘iphone 4s’ ,<br>        ‘price’ : ‘3000’<br>      }]<br>  };</p>
+<p>  console.log( phones_object );</p>
+<p>  res.render(“angularjs/index”, {<br>    layout : false ,<br>    locals : { phones : phones_object }<br>  });</p>
+<p>}<br>这里是angular_demo.js</p>
+<p><pre>/<em> angular js test </em>/</pre></p>
+<p>‘use strict’;</p>
+<p>/<em> Controllers </em>/</p>
+<p>function PhoneListCtrl($scope) {<br>  $scope.phones = [<br>    {“name”: “Nexus S”,<br>     “snippet”: “Fast just got faster with Nexus S.”},<br>    {“name”: “Motorola XOOM™ with Wi-Fi”,<br>     “snippet”: “The Next, Next Generation tablet.”},<br>    {“name”: “MOTOROLA XOOM™”,<br>     “snippet”: “The Next, Next Generation tablet.”}<br>  ];<br>}<br>这里是index.jade</p>
+<p><pre>!!!5<br>html( ng-app )//定义好这是angular的app<br>  head</pre></p>
+<pre><code>meta(http-equiv=&quot;content-type&quot;, content=&quot;text/html; charset=UTF-8&quot;)
+meta(name=&quot;viewport&quot;, content=&quot;width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0&quot;)
+meta(name=&quot;apple-mobile-web-app-capable&quot;, content=&quot;yes&quot;)
+meta(name=&quot;description&quot;, content=&quot;CashLee Homepage&quot;)
+meta(name=&quot;author&quot;, content=&quot;CashLee&quot;)
+meta(name=&quot;keywords&quot;,content=&quot;李秉骏,CashLee,HTML,CSS,XML,XHTML,JavaScript&quot;)
+
+title CashLee Personal Website - 李秉骏的个人网站 &amp;amp; Lab • 個人のホームページ 
+
+link(rel=&apos;stylesheet&apos;, href=&apos;/css/app.css&apos;)
+
+script( src=&apos;lib/angular.js&apos; )
+script( src=&apos;js/application/angular/index.js&apos; )
+</code></pre><p>  body( ng-controller=”PhoneListCtrl” )//定义好controller<br>    ul.angular-demo<br>      li( ng-repeat=”phone in phones” )//执行angular模板<br>        <br>        p</p>
+<pre><code>ul.cashlee-demo
+  - console.log( &apos;phones 数组 长度 : &apos; ,  phones.array.length );//横杠标示，定义jade模板引擎执行代码
+  - for( var i in phones.array ){
+      li 
+        a #{ phones.array[i].name }
+        p #{ phones.array[i].price }
+  - }&lt;/pre&gt;
+</code></pre><p>到这里你就已经体验完AngularJs和Jade模板引擎结合后的快感了！其实同时使用并无冲突，而且语法上非常好理解。对于此后的话，我会介绍一些更复杂的场景，例如此前提及到的，在客户端上面，使用Jade模板引擎进行单页面应用的开发，减少界面复杂度。相信，结合AngularJs后，单页面应用会做得更加轻松。好好体验吧！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
 
     <footer class="post-footer">
       
@@ -1480,10 +1996,10 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
+               src="/images/avatar.gif"
                alt="Cash" />
           <p class="site-author-name" itemprop="name">Cash</p>
           <p class="site-description motion-element" itemprop="description">I would like now to seriously indifferent room of wonderful.</p>
@@ -1491,7 +2007,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1508,7 +2024,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -1520,49 +2036,16 @@
 
         <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.instagram.com/cashlee96347" target="_blank">
-                  
-                    <i class="fa fa-instagram"></i> Instagram
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/lbj96347" target="_blank">
-                  
-                    <i class="fa fa-twitter"></i> Twitter
-                  
-                </a>
-              </span>
-            
-          
         </div>
 
         
         
 
         
-        <div class="links-of-blogroll motion-element">
-          
-        </div>
+        
+
+        
+
 
       </section>
 
@@ -1588,8 +2071,9 @@
   <span class="author" itemprop="copyrightHolder">Cash</span>
 </div>
 
+
 <div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
@@ -1600,7 +2084,9 @@
 </div>
 
 
+        
 
+        
       </div>
     </footer>
 
@@ -1611,12 +2097,6 @@
 
   
 
-
-  
-
-
-
-
 <script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
@@ -1624,37 +2104,10 @@
 </script>
 
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
 
 
 
-  
-  
 
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
 
 
 
@@ -1663,16 +2116,70 @@
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
 
 
 
   
   
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
   
 
   
 
   
+
+  
+
+  
+
 
 </body>
 </html>
